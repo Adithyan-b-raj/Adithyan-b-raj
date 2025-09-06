@@ -202,57 +202,6 @@ Other        55 mins         ░░░░░░░░░░░░░░░░░
 
 </details>
 
-<!-- Method 2: Try Spotify Direct Widget -->
-<details>
-<summary>🎵 Spotify Widget (May require setup)</summary>
-<br>
-
-<a href="https://open.spotify.com/user/31qf4aaodpi4nb6iluyfdvozsmyu">
-  <img src="https://spotify-github-profile.vercel.app/api/spotify?background_color=0d1117&border_color=ffffff" alt="Current Spotify Song" width="400"/>
-</a>
-
-*This widget needs authentication to work properly*
-
-</details>
-
-<!-- Alternative: Lanyard Discord Rich Presence -->
-<details>
-<summary>🎶 Alternative: Try Different Widget</summary>
-<br>
-
-**Option 1: Personal Spotify Widget**
-<img src="https://spotify-readme-rho.vercel.app/api?scan=true&theme=dark" alt="Spotify Widget" width="400"/>
-
-**Option 2: Compact Version**
-<img src="https://spotify-github-profile.vercel.app/api/spotify?background_color=0d1117&border_color=ffffff&text_color=ffffff&limit=1" alt="Compact Spotify" width="300"/>
-
-</details>
-
-<!-- Alternative: Spotify GitHub Profile Widget -->
-<details>
-<summary>🎶 Alternative Spotify Widget</summary>
-<br>
-
-<img src="https://spotify-github-profile.vercel.app/api/spotify?background_color=0d1117&border_color=ffffff" alt="Alternative Spotify Widget" width="400"/>
-
-</details>
-
-<!-- Fallback: Manual Spotify Link -->
-<details>
-<summary>🎧 Listen on Spotify</summary>
-<br>
-
-**Find me on Spotify:** [31qf4aaodpi4nb6iluyfdvozsmyu](https://open.spotify.com/user/31qf4aaodpi4nb6iluyfdvozsmyu)
-
-*Widget updates when I'm actively listening to music on Spotify*
-
-**Currently Vibing To:** 🎵
-- 🎸 Rock & Alternative
-- 🎹 Lo-fi & Chill
-- 🎤 Indie & Electronic
-- 🎼 Film Scores & Orchestral
-
-</details>
 
 </div>
 
