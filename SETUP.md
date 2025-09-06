@@ -5,14 +5,14 @@
 ### 1. Create the Special Repository
 ```bash
 # Create a new repository on GitHub with your exact username
-# For you, this would be: "Adithyanbraj"
+# For you, this would be: "Adithyan-b-raj"
 # ⚠️ Important: Repository name MUST match your username exactly!
 ```
 
 ### 2. Upload Your Profile
 ```bash
 # In your local directory (where you are now):
-git remote add origin https://github.com/Adithyanbraj/Adithyanbraj.git
+git remote add origin https://github.com/Adithyan-b-raj/Adithyan-b-raj.git
 git branch -M main
 git push -u origin main
 ```
@@ -26,7 +26,7 @@ Update these sections in README.md with your real information:
 
 #### 📊 Stats (Lines 55-62)
 - The stats will automatically show your real GitHub activity
-- Make sure your username "Adithyanbraj" is correct in the URLs
+- Make sure your username "Adithyan-b-raj" is correct in the URLs
 
 #### 🏆 Personalize Content
 - Update the "About Me" section (lines 28-46) with your real skills

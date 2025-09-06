@@ -51,14 +51,14 @@ const adithyanbraj = {
 
 ## 🎯 **My GitHub Stats Universe**
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=Adithyanbraj&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true"/>
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Adithyanbraj&layout=compact&theme=tokyonight"/>
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=Adithyan-b-raj&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true"/>
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Adithyan-b-raj&layout=compact&theme=tokyonight"/>
 
 </div>
 
 <div align="center">
 
-<img src="https://github-readme-streak-stats.herokuapp.com?user=Adithyanbraj&theme=tokyonight&hide_border=true"/>
+<img src="https://github-readme-streak-stats.herokuapp.com?user=Adithyan-b-raj&theme=tokyonight&hide_border=true"/>
 
 </div>
 
@@ -103,7 +103,7 @@ const adithyanbraj = {
 
 ## 🏆 **GitHub Trophies**
 
-<img src="https://github-profile-trophy.vercel.app/?username=Adithyanbraj&theme=tokyonight&no-frame=true&no-bg=false&margin-w=4"/>
+<img src="https://github-profile-trophy.vercel.app/?username=Adithyan-b-raj&theme=tokyonight&no-frame=true&no-bg=false&margin-w=4"/>
 
 </div>
 
@@ -169,9 +169,9 @@ Other        55 mins         ░░░░░░░░░░░░░░░░░
 
 ## 🎨 **Profile Views & Visitors**
 
-<img src="https://komarev.com/ghpvc/?username=Adithyanbraj&style=for-the-badge&color=brightgreen" alt="Profile views"/>
+<img src="https://komarev.com/ghpvc/?username=Adithyan-b-raj&style=for-the-badge&color=brightgreen" alt="Profile views"/>
 
-<img src="https://visitcount.itsvg.in/api?id=Adithyanbraj&label=Profile%20Views&color=12&icon=5&pretty=true" />
+<img src="https://visitcount.itsvg.in/api?id=Adithyan-b-raj&label=Profile%20Views&color=12&icon=5&pretty=true" />
 
 </div>
 
