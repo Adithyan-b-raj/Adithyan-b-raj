@@ -139,21 +139,31 @@ Other        55 mins         ░░░░░░░░░░░░░░░░░
 
 <div align="center">
 
+<!-- Blinding Lights Themed Background -->
+<div align="center">
+  <img src="https://media.giphy.com/media/26FLdmIp6wJr91JAI/giphy.gif" width="600" height="100" alt="City Lights Background"/>
+</div>
+
 <!-- Animated Music Section -->
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=2000&pause=1000&color=1DB954&center=true&vCenter=true&width=600&lines=🎵+Now+Playing...;🎶+The+Weeknd+-+Blinding+Lights;🎺+My+Current+Favorite+Track!;🎧+Turn+up+the+volume!" alt="Now Playing Animation" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=2000&pause=1000&color=FF6B9D&center=true&vCenter=true&width=600&lines=🌆+Blinding+Lights+Vibes...;🎵+The+Weeknd+-+Blinding+Lights;🌙+Neon+City+Nights;🎆+Synthwave+Energy!" alt="Blinding Lights Animation" />
 
 <!-- Favorite Song Card -->
 <table align="center">
 <tr>
 <td width="300px" align="center">
 
-**🎆 FAVORITE TRACK 🎆**
+**🌆 BLINDING LIGHTS 🌆**
 
 🎵 **The Weeknd - Blinding Lights**
 
-[![Spotify](https://img.shields.io/badge/Listen_on_Spotify-1DB954?style=for-the-badge&logo=spotify&logoColor=white)](https://open.spotify.com/track/0VjIjW4GlULA4LGwZFpOPd)
+<!-- Neon-style Spotify button -->
+[![Spotify](https://img.shields.io/badge/🎆_LISTEN_ON_SPOTIFY_🎆-FF1DB954?style=for-the-badge&logo=spotify&logoColor=white&labelColor=FF6B9D)](https://open.spotify.com/track/0VjIjW4GlULA4LGwZFpOPd)
 
-🎼 *"I feel like I'm just missing something when you're gone"*
+<!-- City lights themed quote -->
+🌙 *"I feel like I'm just missing something when you're gone"* 🌙
+
+<!-- Synthwave aesthetic elements -->
+🌆 **Genre:** Synthpop • Synthwave • Electronic 🌆
 
 </td>
 </tr>
@@ -162,11 +172,14 @@ Other        55 mins         ░░░░░░░░░░░░░░░░░
 <!-- Music Visualizations -->
 <div align="center">
 
-<!-- Sound Wave Animation -->
-<img src="https://media.giphy.com/media/l2JhOVy5NvX8r1bm8/giphy.gif" width="120" height="60" alt="Music Equalizer"/>
+<!-- Synthwave/Neon Themed Elements -->
+<img src="https://media.giphy.com/media/xTiTnMhJTwNHChdTZS/giphy.gif" width="150" height="80" alt="Neon Music Visualizer"/>
 
-<!-- Music Notes Animation -->
-🎵 🎶 🎵 🎶 🎵 🎶 🎵 🎶 🎵
+<!-- Blinding Lights Music Notes -->
+🌆 🎵 🌙 🎶 🎆 🎵 🌆 🎶 🌙
+
+<!-- Neon City Aesthetic -->
+<img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=14&duration=3000&pause=2000&color=FF6B9D&center=true&vCenter=true&width=500&lines=✨+SYNTHWAVE+VIBES+✨;🌆+NEON+CITY+NIGHTS+🌆;🌙+RETRO+FUTURE+SOUNDS+🌙" alt="Synthwave Aesthetic" />
 
 **🎧 Connect with me on Spotify:** 
 [![Spotify Profile](https://img.shields.io/badge/Spotify-1DB954?style=for-the-badge&logo=spotify&logoColor=white)](https://open.spotify.com/user/31qf4aaodpi4nb6iluyfdvozsmyu)
