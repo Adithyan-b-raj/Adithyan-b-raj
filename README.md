@@ -135,23 +135,59 @@ Other        55 mins         ░░░░░░░░░░░░░░░░░
 ### 💭 **Random Dev Thoughts**
 <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight"/>
 
-### 🎵 **Currently Jamming To**
+### 🎵 **Last Played Song**
 
-<!-- Primary Widget - Try Novatorem -->
-<a href="https://open.spotify.com/user/31qf4aaodpi4nb6iluyfdvozsmyu">
-  <img src="https://novatorem-kyzbk7wxl-bardiesel.vercel.app/api/spotify" alt="Current Spotify Song" width="400" onerror="this.style.display='none'"/>
-</a>
-
-<!-- Static Music Showcase (Always visible) -->
+<!-- Simple Last Played Widget -->
 <div align="center">
 
-🎵 **My Music Universe** 🎵
+<a href="https://open.spotify.com/user/31qf4aaodpi4nb6iluyfdvozsmyu">
+  <img src="https://spotify-recently-played-readme.vercel.app/api?user=31qf4aaodpi4nb6iluyfdvozsmyu&count=1" alt="Recently Played" width="400"/>
+</a>
 
-[![Spotify](https://img.shields.io/badge/Spotify-1ED760?style=for-the-badge&logo=spotify&logoColor=white)](https://open.spotify.com/user/31qf4aaodpi4nb6iluyfdvozsmyu)
-[![Apple Music](https://img.shields.io/badge/Apple_Music-9933CC?style=for-the-badge&logo=apple-music&logoColor=white)](#)
-[![YouTube Music](https://img.shields.io/badge/YouTube_Music-FF0000?style=for-the-badge&logo=youtube-music&logoColor=white)](#)
+*Updates automatically when I listen to music on Spotify*
+
+**🎧 Find me on Spotify:** [31qf4aaodpi4nb6iluyfdvozsmyu](https://open.spotify.com/user/31qf4aaodpi4nb6iluyfdvozsmyu)
 
 </div>
+
+<!-- Alternative widgets for better reliability -->
+<details>
+<summary>🎶 More Music Widgets</summary>
+<br>
+
+**Recently Played (Multiple Songs):**
+<img src="https://spotify-recently-played-readme.vercel.app/api?user=31qf4aaodpi4nb6iluyfdvozsmyu&count=5" alt="Recent Tracks" width="400"/>
+
+**Alternative Style:**
+<img src="https://spotify-github-profile.vercel.app/api/spotify?background_color=0d1117&border_color=ffffff" alt="Spotify Widget" width="400"/>
+
+</details>
+
+<!-- Method 2: Try Spotify Direct Widget -->
+<details>
+<summary>🎵 Spotify Widget (May require setup)</summary>
+<br>
+
+<a href="https://open.spotify.com/user/31qf4aaodpi4nb6iluyfdvozsmyu">
+  <img src="https://spotify-github-profile.vercel.app/api/spotify?background_color=0d1117&border_color=ffffff" alt="Current Spotify Song" width="400"/>
+</a>
+
+*This widget needs authentication to work properly*
+
+</details>
+
+<!-- Alternative: Lanyard Discord Rich Presence -->
+<details>
+<summary>🎶 Alternative: Try Different Widget</summary>
+<br>
+
+**Option 1: Personal Spotify Widget**
+<img src="https://spotify-readme-rho.vercel.app/api?scan=true&theme=dark" alt="Spotify Widget" width="400"/>
+
+**Option 2: Compact Version**
+<img src="https://spotify-github-profile.vercel.app/api/spotify?background_color=0d1117&border_color=ffffff&text_color=ffffff&limit=1" alt="Compact Spotify" width="300"/>
+
+</details>
 
 <!-- Alternative: Spotify GitHub Profile Widget -->
 <details>
