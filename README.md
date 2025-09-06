@@ -142,10 +142,15 @@ Other        55 mins         ░░░░░░░░░░░░░░░░░
 <!-- Subtle Synthwave Background Elements -->
 <div align="center">
 
-<!-- Subtle animated synthwave background -->
-<img src="https://media.giphy.com/media/l0HlPystfePnAI3G8/giphy.gif" width="500" height="80" alt="Subtle Neon Background"/>
+<!-- REAL-TIME SPOTIFY WIDGET -->
+<!-- TODO: Replace YOUR_VERCEL_APP with your actual Vercel URL after setup -->
+<a href="https://open.spotify.com/user/31qf4aaodpi4nb6iluyfdvozsmyu">
+  <img src="https://YOUR_VERCEL_APP.vercel.app/api/spotify?background_color=0d1117&border_color=FF6B9D&text_color=ffffff&bar_color=1DB954" alt="Now Playing" width="400"/>
+</a>
 
-🌆 ────────────── **BLINDING LIGHTS ZONE** ────────────── 🌆
+*🎵 Live updates when I'm jamming to music on Spotify!*
+
+🌆 ──────────── **REAL-TIME MUSIC ZONE** ──────────── 🌆
 
 </div>
 
