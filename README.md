@@ -135,6 +135,35 @@ Other        55 mins         ░░░░░░░░░░░░░░░░░
 ### 💭 **Random Dev Thoughts**
 <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight"/>
 
+### 🎵 **Currently Jamming To**
+
+<!-- Primary Spotify Widget -->
+<a href="https://open.spotify.com/user/31qf4aaodpi4nb6iluyfdvozsmyu">
+  <img src="https://spotify-readme-ebon.vercel.app/api?scan=true&theme=dark&rainbow=true" alt="Current Spotify Song" width="400"/>
+</a>
+
+<!-- Compact Widget for Mobile -->
+<br><br>
+<img src="https://spotify-readme-ebon.vercel.app/api?scan=false&theme=compact" alt="Spotify Compact" width="300"/>
+
+<details>
+<summary>🌈 More Spotify Themes</summary>
+<br>
+
+**Light Theme:**
+<br>
+<img src="https://spotify-readme-ebon.vercel.app/api?scan=true&theme=light" width="400"/>
+
+**Nyan Cat (Animated):**
+<br>
+<img src="https://spotify-readme-ebon.vercel.app/api?scan=true&theme=nyan-cat" width="400"/>
+
+**Gradient:**
+<br>
+<img src="https://spotify-readme-ebon.vercel.app/api?scan=true&theme=gradient" width="400"/>
+
+</details>
+
 </div>
 
 ---
