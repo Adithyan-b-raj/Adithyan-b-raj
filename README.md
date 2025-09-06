@@ -139,9 +139,14 @@ Other        55 mins         ░░░░░░░░░░░░░░░░░
 
 <div align="center">
 
-<!-- Blinding Lights Themed Background -->
+<!-- Subtle Synthwave Background Elements -->
 <div align="center">
-  <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjN1Mm5pdXhpenhtdDA0bzcxdHU3N3R2OWk3Mm9mdjNsOXg1ZzV1aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Mddye3t5JUYVAEtd2t/giphy.gif" width="600" height="200" alt="Blinding Lights Animated Background"/>
+
+<!-- Subtle animated synthwave background -->
+<img src="https://media.giphy.com/media/l0HlPystfePnAI3G8/giphy.gif" width="500" height="80" alt="Subtle Neon Background"/>
+
+🌆 ────────────── **BLINDING LIGHTS ZONE** ────────────── 🌆
+
 </div>
 
 <!-- Animated Music Section -->
@@ -165,9 +170,9 @@ Other        55 mins         ░░░░░░░░░░░░░░░░░
 <!-- Synthwave aesthetic elements -->
 🌆 **Genre:** Synthpop • Synthwave • Electronic 🌆
 
-<!-- Additional Blinding Lights Visual -->
+<!-- Subtle Blinding Lights Visual Accent -->
 <br>
-<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjN1Mm5pdXhpenhtdDA0bzcxdHU3N3R2OWk3Mm9mdjNsOXg1ZzV1aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Mddye3t5JUYVAEtd2t/giphy.gif" width="300" height="150" alt="Blinding Lights Vibe"/>
+<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjN1Mm5pdXhpenhtdDA0bzcxdHU3N3R2OWk3Mm9mdjNsOXg1ZzV1aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Mddye3t5JUYVAEtd2t/giphy.gif" width="200" height="100" alt="Blinding Lights Accent"/>
 
 </td>
 </tr>
