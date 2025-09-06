@@ -137,30 +137,45 @@ Other        55 mins         ░░░░░░░░░░░░░░░░░
 
 ### 🎵 **Currently Jamming To**
 
-<!-- Primary Spotify Widget -->
+<!-- Primary Widget - Try Novatorem -->
 <a href="https://open.spotify.com/user/31qf4aaodpi4nb6iluyfdvozsmyu">
-  <img src="https://spotify-readme-ebon.vercel.app/api?scan=true&theme=dark&rainbow=true" alt="Current Spotify Song" width="400"/>
+  <img src="https://novatorem-kyzbk7wxl-bardiesel.vercel.app/api/spotify" alt="Current Spotify Song" width="400" onerror="this.style.display='none'"/>
 </a>
 
-<!-- Compact Widget for Mobile -->
-<br><br>
-<img src="https://spotify-readme-ebon.vercel.app/api?scan=false&theme=compact" alt="Spotify Compact" width="300"/>
+<!-- Static Music Showcase (Always visible) -->
+<div align="center">
 
+🎵 **My Music Universe** 🎵
+
+[![Spotify](https://img.shields.io/badge/Spotify-1ED760?style=for-the-badge&logo=spotify&logoColor=white)](https://open.spotify.com/user/31qf4aaodpi4nb6iluyfdvozsmyu)
+[![Apple Music](https://img.shields.io/badge/Apple_Music-9933CC?style=for-the-badge&logo=apple-music&logoColor=white)](#)
+[![YouTube Music](https://img.shields.io/badge/YouTube_Music-FF0000?style=for-the-badge&logo=youtube-music&logoColor=white)](#)
+
+</div>
+
+<!-- Alternative: Spotify GitHub Profile Widget -->
 <details>
-<summary>🌈 More Spotify Themes</summary>
+<summary>🎶 Alternative Spotify Widget</summary>
 <br>
 
-**Light Theme:**
-<br>
-<img src="https://spotify-readme-ebon.vercel.app/api?scan=true&theme=light" width="400"/>
+<img src="https://spotify-github-profile.vercel.app/api/spotify?background_color=0d1117&border_color=ffffff" alt="Alternative Spotify Widget" width="400"/>
 
-**Nyan Cat (Animated):**
-<br>
-<img src="https://spotify-readme-ebon.vercel.app/api?scan=true&theme=nyan-cat" width="400"/>
+</details>
 
-**Gradient:**
+<!-- Fallback: Manual Spotify Link -->
+<details>
+<summary>🎧 Listen on Spotify</summary>
 <br>
-<img src="https://spotify-readme-ebon.vercel.app/api?scan=true&theme=gradient" width="400"/>
+
+**Find me on Spotify:** [31qf4aaodpi4nb6iluyfdvozsmyu](https://open.spotify.com/user/31qf4aaodpi4nb6iluyfdvozsmyu)
+
+*Widget updates when I'm actively listening to music on Spotify*
+
+**Currently Vibing To:** 🎵
+- 🎸 Rock & Alternative
+- 🎹 Lo-fi & Chill
+- 🎤 Indie & Electronic
+- 🎼 Film Scores & Orchestral
 
 </details>
 
