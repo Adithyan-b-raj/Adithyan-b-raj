@@ -141,7 +141,7 @@ Other        55 mins         ░░░░░░░░░░░░░░░░░
 
 <!-- Blinding Lights Themed Background -->
 <div align="center">
-  <img src="https://media.giphy.com/media/26FLdmIp6wJr91JAI/giphy.gif" width="600" height="100" alt="City Lights Background"/>
+  <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjN1Mm5pdXhpenhtdDA0bzcxdHU3N3R2OWk3Mm9mdjNsOXg1ZzV1aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Mddye3t5JUYVAEtd2t/giphy.gif" width="600" height="200" alt="Blinding Lights Animated Background"/>
 </div>
 
 <!-- Animated Music Section -->
@@ -164,6 +164,10 @@ Other        55 mins         ░░░░░░░░░░░░░░░░░
 
 <!-- Synthwave aesthetic elements -->
 🌆 **Genre:** Synthpop • Synthwave • Electronic 🌆
+
+<!-- Additional Blinding Lights Visual -->
+<br>
+<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjN1Mm5pdXhpenhtdDA0bzcxdHU3N3R2OWk3Mm9mdjNsOXg1ZzV1aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Mddye3t5JUYVAEtd2t/giphy.gif" width="300" height="150" alt="Blinding Lights Vibe"/>
 
 </td>
 </tr>
