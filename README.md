@@ -135,31 +135,70 @@ Other        55 mins         ░░░░░░░░░░░░░░░░░
 ### 💭 **Random Dev Thoughts**
 <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight"/>
 
-### 🎵 **Last Played Song**
+### 🎵 **Currently Vibing To**
 
-<!-- Simple Last Played Widget -->
 <div align="center">
 
-<a href="https://open.spotify.com/user/31qf4aaodpi4nb6iluyfdvozsmyu">
-  <img src="https://spotify-recently-played-readme.vercel.app/api?user=31qf4aaodpi4nb6iluyfdvozsmyu&count=1" alt="Recently Played" width="400"/>
-</a>
+<!-- Animated Music Section -->
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=2000&pause=1000&color=1DB954&center=true&vCenter=true&width=600&lines=🎵+Now+Playing...;🎶+The+Weeknd+-+Blinding+Lights;🎺+My+Current+Favorite+Track!;🎧+Turn+up+the+volume!" alt="Now Playing Animation" />
 
-*Updates automatically when I listen to music on Spotify*
+<!-- Favorite Song Card -->
+<table align="center">
+<tr>
+<td width="300px" align="center">
 
-**🎧 Find me on Spotify:** [31qf4aaodpi4nb6iluyfdvozsmyu](https://open.spotify.com/user/31qf4aaodpi4nb6iluyfdvozsmyu)
+**🎆 FAVORITE TRACK 🎆**
+
+🎵 **The Weeknd - Blinding Lights**
+
+[![Spotify](https://img.shields.io/badge/Listen_on_Spotify-1DB954?style=for-the-badge&logo=spotify&logoColor=white)](https://open.spotify.com/track/0VjIjW4GlULA4LGwZFpOPd)
+
+🎼 *"I feel like I'm just missing something when you're gone"*
+
+</td>
+</tr>
+</table>
+
+<!-- Music Visualizations -->
+<div align="center">
+
+<!-- Sound Wave Animation -->
+<img src="https://media.giphy.com/media/l2JhOVy5NvX8r1bm8/giphy.gif" width="120" height="60" alt="Music Equalizer"/>
+
+<!-- Music Notes Animation -->
+🎵 🎶 🎵 🎶 🎵 🎶 🎵 🎶 🎵
+
+**🎧 Connect with me on Spotify:** 
+[![Spotify Profile](https://img.shields.io/badge/Spotify-1DB954?style=for-the-badge&logo=spotify&logoColor=white)](https://open.spotify.com/user/31qf4aaodpi4nb6iluyfdvozsmyu)
 
 </div>
 
-<!-- Alternative widgets for better reliability -->
+<!-- Music Taste & Genres -->
 <details>
-<summary>🎶 More Music Widgets</summary>
+<summary>🎸 My Music Universe</summary>
 <br>
 
-**Recently Played (Multiple Songs):**
-<img src="https://spotify-recently-played-readme.vercel.app/api?user=31qf4aaodpi4nb6iluyfdvozsmyu&count=5" alt="Recent Tracks" width="400"/>
+### 🎵 **Top Artists**
+- 🌟 The Weeknd
+- 🎸 Daft Punk  
+- 🎤 Post Malone
+- 🎹 Billie Eilish
+- 🎺 OneRepublic
 
-**Alternative Style:**
-<img src="https://spotify-github-profile.vercel.app/api/spotify?background_color=0d1117&border_color=ffffff" alt="Spotify Widget" width="400"/>
+### 🎼 **Favorite Genres**
+```
+🌆 Synthwave     ████████████████████ 95%
+🎵 Pop           ███████████████████░ 90%
+🎤 Hip Hop       ████████████████░░░░ 85%
+🎸 Electronic    ███████████████░░░░░ 80%
+🎻 Indie         █████████████░░░░░░░ 75%
+```
+
+### 🎶 **Mood Playlists**
+- 🌙 **Late Night Coding** - Synthwave & Lo-fi
+- ⚡ **Workout Vibes** - High energy beats
+- 🌅 **Morning Coffee** - Chill & Indie
+- 🎆 **Weekend Party** - Pop & Hip Hop
 
 </details>
 
