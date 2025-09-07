@@ -170,7 +170,7 @@ Other        55 mins         ░░░░░░░░░░░░░░░░░
 🎵 **The Weeknd - Blinding Lights**
 
 <!-- Neon-style Spotify button -->
-[![Spotify](https://img.shields.io/badge/🎆_LISTEN_ON_SPOTIFY_🎆-FF1DB954?style=for-the-badge&logo=spotify&logoColor=white&labelColor=FF6B9D)](https://open.spotify.com/track/0VjIjW4GlULA4LGwZFpOPd)
+[![Spotify](https://spotify-github-profile.kittinanx.com/api/view?uid=31qf4aaodpi4nb6iluyfdvozsmyu&cover_image=true&theme=novatorem&show_offline=false&background_color=121212&interchange=true&bar_color=53b14f&bar_color_cover=false)](https://github.com/kittinan/spotify-github-profile)
 
 <!-- City lights themed quote -->
 🌙 *"I feel like I'm just missing something when you're gone"* 🌙
