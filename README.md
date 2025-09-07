@@ -1,6 +1,6 @@
 <div align="center">
 
-
+![Snake animation](https://github.com/Adithyan-b-raj/Adithyan-b-raj/blob/output/github-contribution-grid-snake.svg)
 
 ## About Me
 - 🔭 I'm currently working on...
