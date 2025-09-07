@@ -157,9 +157,6 @@ Other        55 mins         ░░░░░░░░░░░░░░░░░
 
 </div>
 
-<!-- Animated Music Section -->
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=2000&pause=1000&color=FF6B9D&center=true&vCenter=true&width=600&lines=🌆+Blinding+Lights+Vibes...;🎵+The+Weeknd+-+Blinding+Lights;🌙+Neon+City+Nights;🎆+Synthwave+Energy!" alt="Blinding Lights Animation" />
-
 
 <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjN1Mm5pdXhpenhtdDA0bzcxdHU3N3R2OWk3Mm9mdjNsOXg1ZzV1aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Mddye3t5JUYVAEtd2t/giphy.gif" width="200" height="100" alt="Blinding Lights Accent"/>
 
