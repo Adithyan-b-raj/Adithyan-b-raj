@@ -1,11 +1,9 @@
-name: Generate Snake Eating My Name
+name: Custom Text Snake
 
 on:
   schedule:
-    - cron: "0 */12 * * *"
+    - cron: "0 0 * * *"
   workflow_dispatch:
-  push:
-    branches: [ main ]
 
 permissions:
   contents: write
@@ -17,29 +15,47 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Generate snake eating my name
-        uses: Platane/snk@v3
+      - name: Generate snake with text
+        uses: ashutosh00710/github-readme-activity-graph@master
         with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark&background_color=0d1117
-            dist/github-snake-neon.svg?palette=github-neon
-          
-          # Custom message - Your name will appear on the grid
+          username: ${{ github.repository_owner }}
+          theme: github
           text: "ADITHYAN B RAJ"
           
-          # Animation settings
-          animation_duration: 5
+      - name: Generate custom snake
+        run: |
+          mkdir -p dist
+          # Custom Python script to create SVG with your name
+          python3 << 'EOF'
+          import xml.etree.ElementTree as ET
           
-          # Grid size (optional)
-          grid_size: 20
+          # Create SVG with grid and text
+          svg = ET.Element('svg', width='800', height='200', xmlns='http://www.w3.org/2000/svg')
           
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: Deploy to output branch
-        uses: peaceiris/actions-gh-pages@v3
+          # Add background
+          rect = ET.SubElement(svg, 'rect', width='800', height='200', fill='#0d1117')
+          
+          # Add your name as text that gets "eaten"
+          text = ET.SubElement(svg, 'text', x='50', y='100', 
+                              fill='#39d353', 
+                              **{'font-family': 'monospace', 'font-size': '24'})
+          text.text = 'ADITHYAN B RAJ'
+          
+          # Add animated snake
+          snake = ET.SubElement(svg, 'circle', cx='10', cy='100', r='8', fill='#1f6feb')
+          animate = ET.SubElement(snake, 'animateTransform',
+                                 attributeName='transform',
+                                 type='translate',
+                                 values='0,0;400,0;800,0',
+                                 dur='3s',
+                                 repeatCount='indefinite')
+          
+          # Save SVG
+          tree = ET.ElementTree(svg)
+          tree.write('dist/custom-snake.svg', encoding='utf-8', xml_declaration=True)
+          EOF
+          
+      - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
