@@ -1,0 +1,45 @@
+name: Snake Eating ADITHYAN B RAJ
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Generate snake game
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          
+          # Multiple themed versions
+          outputs: |
+            dist/snake-light.svg
+            dist/snake-dark.svg?palette=github-dark
+            dist/snake-neon.svg?color_snake=#ff6b6b&color_dots=#4ecdc4,#45b7d1,#96ceb4,#ffeaa7,#dda0dd
+            dist/snake-custom.svg?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+          
+          # Your name to be "eaten" by the snake
+          custom_text: "ADITHYAN B RAJ"
+          
+          # Snake behavior
+          snake_length: 20
+          
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Push snake animations
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
