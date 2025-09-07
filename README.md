@@ -1,8 +1,6 @@
 <div align="center">
-# Hi there! 👋 I'm [Your Name]
 
-## 🎵 Currently Listening To:
-[![Spotify](https://spotify-github-profile.kittinanx.com/api/view?uid=31qf4aaodpi4nb6iluyfdvozsmyu&cover_image=true&theme=novatorem&show_offline=false&background_color=121212&interchange=true&bar_color=53b14f&bar_color_cover=false)](https://github.com/kittinan/spotify-github-profile)
+
 
 ## About Me
 - 🔭 I'm currently working on...
@@ -150,10 +148,8 @@ Other        55 mins         ░░░░░░░░░░░░░░░░░
 <div align="center">
 
 <!-- REAL-TIME SPOTIFY WIDGET -->
-<!-- TODO: Replace YOUR_VERCEL_APP with your actual Vercel URL after setup -->
-<a href="https://open.spotify.com/user/31qf4aaodpi4nb6iluyfdvozsmyu">
-  <img src="https://YOUR_VERCEL_APP.vercel.app/api/spotify?background_color=0d1117&border_color=FF6B9D&text_color=ffffff&bar_color=1DB954" alt="Now Playing" width="400"/>
-</a>
+## 🎵 Currently Listening To:
+[![Spotify](https://spotify-github-profile.kittinanx.com/api/view?uid=31qf4aaodpi4nb6iluyfdvozsmyu&cover_image=true&theme=novatorem&show_offline=false&background_color=121212&interchange=true&bar_color=53b14f&bar_color_cover=false)](https://github.com/kittinan/spotify-github-profile)
 
 *🎵 Live updates when I'm jamming to music on Spotify!*
 
