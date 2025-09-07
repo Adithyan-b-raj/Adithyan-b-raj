@@ -1,44 +1,22 @@
-name: Generate GitHub Snake
+name: Snake Game
 
 on:
-  # Schedule the workflow to run every 12 hours
   schedule:
-    - cron: "0 */12 * * *"
-  
-  # Allow manual triggering
+    - cron: "0 0 * * *"
   workflow_dispatch:
-  
-  # Trigger on push to main
-  push:
-    branches: [ main ]
 
 jobs:
-  generate:
-    permissions:
-      contents: write
+  build:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
-    
     steps:
-      # Checkout the repository
-      - name: Checkout
-        uses: actions/checkout@v3
-      
-      # Generate the snake files in ./dist/
-      - name: Generate Snake
-        uses: Platane/snk/svg-only@v3
+      - uses: actions/checkout@v2
+      - uses: Platane/snk@master
+        id: snake-gif
         with:
           github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
-            dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
-      # Push the generated files to the output branch
-      - name: Push to output branch
-        uses: crazy-max/ghaction-github-pages@v3.1.0
+          gif_out_path: dist/github-snake.gif
+          svg_out_path: dist/github-snake.svg
+      - uses: crazy-max/ghaction-github-pages@v2.1.3
         with:
           target_branch: output
           build_dir: dist
