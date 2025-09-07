@@ -210,7 +210,7 @@ Other        55 mins         ░░░░░░░░░░░░░░░░░
 
 ---
 
-## 🎯 **2024 Goals**
+## 🎯 **2025 Goals**
 
 - [ ] 🚀 Launch 3 major projects
 - [ ] 📱 Build a mobile app that actually gets used
