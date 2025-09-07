@@ -1,6 +1,12 @@
 <div align="center">
-[![spotify-github-profile](https://spotify-github-profile.kittinanx.com/api/view?uid=31qf4aaodpi4nb6iluyfdvozsmyu&cover_image=true&theme=novatorem&show_offline=false&background_color=121212&interchange=true&bar_color=53b14f&bar_color_cover=false)](https://github.com/kittinan/spotify-github-profile)
+# Hi there! 👋 I'm [Your Name]
 
+## 🎵 Currently Listening To:
+[![Spotify](https://spotify-github-profile.kittinanx.com/api/view?uid=31qf4aaodpi4nb6iluyfdvozsmyu&cover_image=true&theme=novatorem&show_offline=false&background_color=121212&interchange=true&bar_color=53b14f&bar_color_cover=false)](https://github.com/kittinan/spotify-github-profile)
+
+## About Me
+- 🔭 I'm currently working on...
+- 🌱 I'm currently learning...
 # 🌟 Welcome to Adithyanbraj's Universe 🌟
 
 <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=32&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+there!+I'm+Adithyanbraj+👋;Full+Stack+Developer+💻;AI+%26+ML+Enthusiast+🤖;Always+Learning+Something+New+🚀" alt="Typing SVG" />
