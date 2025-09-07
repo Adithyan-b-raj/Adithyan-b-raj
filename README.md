@@ -1,5 +1,5 @@
 <div align="center">
-[![Spotify](http://127.0.0.1:5000?uid=31qf4aaodpi4nb6iluyfdvozsmyu&theme=modern)]
+[![spotify-github-profile](https://spotify-github-profile.kittinanx.com/api/view?uid=31qf4aaodpi4nb6iluyfdvozsmyu&cover_image=true&theme=novatorem&show_offline=false&background_color=121212&interchange=true&bar_color=53b14f&bar_color_cover=false)](https://github.com/kittinan/spotify-github-profile)
 
 # 🌟 Welcome to Adithyanbraj's Universe 🌟
 
