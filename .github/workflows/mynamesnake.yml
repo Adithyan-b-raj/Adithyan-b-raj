@@ -1,785 +1,252 @@
-name: Red Snake Eating ADITHYAN B RAJ
+name: Multi-Repo Snake Pattern for ADITHYAN B RAJ
 
 on:
-  schedule:
-    - cron: "0 0 * * *"
   workflow_dispatch:
+    inputs:
+      create_repos:
+        description: 'Create letter pattern repositories'
+        required: true
+        default: 'true'
+        type: boolean
 
 permissions:
   contents: write
 
 jobs:
-  generate:
+  create-pattern-repos:
     runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.create_repos == 'true' }}
+    
+    steps:
+      - name: Setup GitHub CLI
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
+          
+      - name: Create repositories for ADITHYAN B RAJ pattern
+        run: |
+          # Function to create repo with commits
+          create_pattern_repo() {
+            local repo_name=$1
+            local letter=$2
+            local position=$3
+            
+            echo "Creating repository: $repo_name for letter $letter at position $position"
+            
+            # Create repository
+            gh repo create "$repo_name" --private --description "Pattern pixel for letter $letter - ADITHYAN B RAJ snake animation"
+            
+            # Clone and add commits
+            git clone "https://github.com/${{ github.repository_owner }}/$repo_name.git"
+            cd "$repo_name"
+            
+            # Configure git
+            git config user.name "GitHub Actions"
+            git config user.email "actions@github.com"
+            
+            # Create README
+            echo "# $letter - Position $position" > README.md
+            echo "This repository is part of the ADITHYAN B RAJ snake animation pattern." >> README.md
+            echo "Letter: **$letter** | Position: $position" >> README.md
+            
+            git add README.md
+            git commit -m "Initial commit for letter $letter pattern"
+            
+            # Create multiple commits to ensure visibility on contribution graph
+            for i in {1..5}; do
+              echo "Commit $i for pattern visibility" >> commits.txt
+              git add commits.txt
+              git commit -m "Pattern commit $i for $letter"
+            done
+            
+            git push
+            cd ..
+            rm -rf "$repo_name"
+            
+            sleep 2  # Rate limiting
+          }
+          
+          # Letter A (positions 1-8)
+          create_pattern_repo "A1-top-left" "A" "1"
+          create_pattern_repo "A2-top-center" "A" "2" 
+          create_pattern_repo "A3-top-right" "A" "3"
+          create_pattern_repo "A4-middle-left" "A" "4"
+          create_pattern_repo "A5-middle-center" "A" "5"
+          create_pattern_repo "A6-middle-right" "A" "6"
+          create_pattern_repo "A7-bottom-left" "A" "7"
+          create_pattern_repo "A8-bottom-right" "A" "8"
+          
+          # Letter D (positions 1-10)
+          create_pattern_repo "D1-left-top" "D" "1"
+          create_pattern_repo "D2-left-upper" "D" "2"
+          create_pattern_repo "D3-left-middle" "D" "3"
+          create_pattern_repo "D4-left-lower" "D" "4"
+          create_pattern_repo "D5-left-bottom" "D" "5"
+          create_pattern_repo "D6-top-center" "D" "6"
+          create_pattern_repo "D7-top-right" "D" "7"
+          create_pattern_repo "D8-right-middle" "D" "8"
+          create_pattern_repo "D9-bottom-center" "D" "9"
+          create_pattern_repo "D10-bottom-right" "D" "10"
+          
+          # Letter I (positions 1-7)
+          create_pattern_repo "I1-top-left" "I" "1"
+          create_pattern_repo "I2-top-center" "I" "2"
+          create_pattern_repo "I3-top-right" "I" "3"
+          create_pattern_repo "I4-middle-center" "I" "4"
+          create_pattern_repo "I5-bottom-left" "I" "5"
+          create_pattern_repo "I6-bottom-center" "I" "6"
+          create_pattern_repo "I7-bottom-right" "I" "7"
+          
+          # Letter T (positions 1-6)
+          create_pattern_repo "T1-top-left" "T" "1"
+          create_pattern_repo "T2-top-center" "T" "2"
+          create_pattern_repo "T3-top-right" "T" "3"
+          create_pattern_repo "T4-middle-center" "T" "4"
+          create_pattern_repo "T5-lower-center" "T" "5"
+          create_pattern_repo "T6-bottom-center" "T" "6"
+          
+          # Letter H (positions 1-10)
+          create_pattern_repo "H1-left-top" "H" "1"
+          create_pattern_repo "H2-left-upper" "H" "2"
+          create_pattern_repo "H3-left-middle" "H" "3"
+          create_pattern_repo "H4-left-lower" "H" "4"
+          create_pattern_repo "H5-left-bottom" "H" "5"
+          create_pattern_repo "H6-middle-center" "H" "6"
+          create_pattern_repo "H7-right-top" "H" "7"
+          create_pattern_repo "H8-right-upper" "H" "8"
+          create_pattern_repo "H9-right-lower" "H" "9"
+          create_pattern_repo "H10-right-bottom" "H" "10"
+          
+          # Letter Y (positions 1-7)
+          create_pattern_repo "Y1-top-left" "Y" "1"
+          create_pattern_repo "Y2-top-right" "Y" "2"
+          create_pattern_repo "Y3-upper-center" "Y" "3"
+          create_pattern_repo "Y4-middle-center" "Y" "4"
+          create_pattern_repo "Y5-lower-center" "Y" "5"
+          create_pattern_repo "Y6-bottom-center" "Y" "6"
+          
+          # Letter A (second A - positions 1-8)
+          create_pattern_repo "A2-1-top-left" "A" "1"
+          create_pattern_repo "A2-2-top-center" "A" "2"
+          create_pattern_repo "A2-3-top-right" "A" "3"
+          create_pattern_repo "A2-4-middle-left" "A" "4"
+          create_pattern_repo "A2-5-middle-center" "A" "5"
+          create_pattern_repo "A2-6-middle-right" "A" "6"
+          create_pattern_repo "A2-7-bottom-left" "A" "7"
+          create_pattern_repo "A2-8-bottom-right" "A" "8"
+          
+          # Letter N (positions 1-10)
+          create_pattern_repo "N1-left-top" "N" "1"
+          create_pattern_repo "N2-left-upper" "N" "2"
+          create_pattern_repo "N3-left-middle" "N" "3"
+          create_pattern_repo "N4-left-lower" "N" "4"
+          create_pattern_repo "N5-left-bottom" "N" "5"
+          create_pattern_repo "N6-diagonal-1" "N" "6"
+          create_pattern_repo "N7-diagonal-2" "N" "7"
+          create_pattern_repo "N8-right-top" "N" "8"
+          create_pattern_repo "N9-right-middle" "N" "9"
+          create_pattern_repo "N10-right-bottom" "N" "10"
+          
+          # SPACE (no repos for space)
+          
+          # Letter B (positions 1-12)
+          create_pattern_repo "B1-left-top" "B" "1"
+          create_pattern_repo "B2-left-upper" "B" "2"
+          create_pattern_repo "B3-left-middle" "B" "3"
+          create_pattern_repo "B4-left-lower" "B" "4"
+          create_pattern_repo "B5-left-bottom" "B" "5"
+          create_pattern_repo "B6-top-center" "B" "6"
+          create_pattern_repo "B7-top-right" "B" "7"
+          create_pattern_repo "B8-middle-center" "B" "8"
+          create_pattern_repo "B9-middle-right" "B" "9"
+          create_pattern_repo "B10-bottom-center" "B" "10"
+          create_pattern_repo "B11-bottom-right" "B" "11"
+          
+          # SPACE (no repos for space)
+          
+          # Letter R (positions 1-11)
+          create_pattern_repo "R1-left-top" "R" "1"
+          create_pattern_repo "R2-left-upper" "R" "2"
+          create_pattern_repo "R3-left-middle" "R" "3"
+          create_pattern_repo "R4-left-lower" "R" "4"
+          create_pattern_repo "R5-left-bottom" "R" "5"
+          create_pattern_repo "R6-top-center" "R" "6"
+          create_pattern_repo "R7-top-right" "R" "7"
+          create_pattern_repo "R8-middle-center" "R" "8"
+          create_pattern_repo "R9-diagonal" "R" "9"
+          create_pattern_repo "R10-bottom-right" "R" "10"
+          
+          # Letter A (third A - positions 1-8)
+          create_pattern_repo "A3-1-top-left" "A" "1"
+          create_pattern_repo "A3-2-top-center" "A" "2"
+          create_pattern_repo "A3-3-top-right" "A" "3"
+          create_pattern_repo "A3-4-middle-left" "A" "4"
+          create_pattern_repo "A3-5-middle-center" "A" "5"
+          create_pattern_repo "A3-6-middle-right" "A" "6"
+          create_pattern_repo "A3-7-bottom-left" "A" "7"
+          create_pattern_repo "A3-8-bottom-right" "A" "8"
+          
+          # Letter J (positions 1-7)
+          create_pattern_repo "J1-top-left" "J" "1"
+          create_pattern_repo "J2-top-center" "J" "2"
+          create_pattern_repo "J3-top-right" "J" "3"
+          create_pattern_repo "J4-middle-right" "J" "4"
+          create_pattern_repo "J5-lower-right" "J" "5"
+          create_pattern_repo "J6-bottom-center" "J" "6"
+          create_pattern_repo "J7-bottom-left" "J" "7"
+          
+          echo "✅ All repositories created successfully!"
+          echo "Total repositories created: ~90 (representing each pixel of ADITHYAN B RAJ)"
+
+  generate-snake:
+    runs-on: ubuntu-latest
+    needs: create-pattern-repos
     
     steps:
       - uses: actions/checkout@v4
       
-      - name: Create red snake eating name precisely
+      - name: Wait for repositories to be indexed
+        run: |
+          echo "Waiting 60 seconds for GitHub to index new repositories..."
+          sleep 60
+          
+      - name: Generate snake eating the pattern
+        uses: Platane/snk@v3
+        id: snake-gif
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/multi-repo-snake.svg
+            dist/multi-repo-snake-dark.svg?palette=github-dark&background_color=0d1117
+            dist/multi-repo-snake-neon.svg?palette=github-neon
+            dist/multi-repo-snake.gif?color_snake=#ff0000&color_dots=#39d353,#26a641,#006d32,#0d4017
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Generate contribution overview
         run: |
           mkdir -p dist
           
-          cat > dist/red-snake-eating.svg << 'EOF'
-          <svg width="1400" height="400" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <style>
-                .bg { fill: #0d1117; }
-                .letter-dot { 
-                  fill: #39d353; 
-                  opacity: 1;
-                  stroke: #39d353;
-                  stroke-width: 1;
-                }
-                .eaten { 
-                  fill: #ff0000; 
-                  opacity: 0;
-                  transform: scale(0);
-                }
-                .snake-head { 
-                  fill: #ff0000; 
-                  stroke: #cc0000;
-                  stroke-width: 2;
-                  filter: drop-shadow(0 0 10px #ff0000);
-                }
-                .snake-body { 
-                  fill: #cc0000; 
-                  stroke: #990000;
-                  stroke-width: 1;
-                  opacity: 0.9;
-                }
-                .title { 
-                  fill: #f0f6fc; 
-                  font-family: 'Courier New', monospace; 
-                  font-weight: bold;
-                }
-                .eating-effect {
-                  fill: #ffff00;
-                  opacity: 0;
-                }
-              </style>
-              
-              <filter id="redGlow">
-                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                <feMerge>
-                  <feMergeNode in="coloredBlur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-            </defs>
-            
-            <rect class="bg" width="1400" height="400"/>
-            
-            <!-- Title -->
-            <text x="700" y="40" class="title" font-size="24" text-anchor="middle">
-              🔴 Red Snake Devouring: ADITHYAN B RAJ 🔴
-            </text>
-            
-            <!-- A - Position 1 (x=80) -->
-            <g id="A1">
-              <rect x="80" y="180" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="3s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="3s"/>
-              </rect>
-              <rect x="90" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="3.1s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="3.1s"/>
-              </rect>
-              <rect x="100" y="180" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="3.2s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="3.2s"/>
-              </rect>
-              <rect x="90" y="190" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="3.3s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="3.3s"/>
-              </rect>
-              <rect x="80" y="200" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="3.4s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="3.4s"/>
-              </rect>
-              <rect x="100" y="200" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="3.5s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="3.5s"/>
-              </rect>
-              <rect x="80" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="3.6s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="3.6s"/>
-              </rect>
-              <rect x="100" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="3.7s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="3.7s"/>
-              </rect>
-            </g>
-            
-            <!-- D - Position 2 (x=130) -->
-            <g id="D1">
-              <rect x="130" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="4.2s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="4.2s"/>
-              </rect>
-              <rect x="130" y="180" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="4.3s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="4.3s"/>
-              </rect>
-              <rect x="130" y="190" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="4.4s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="4.4s"/>
-              </rect>
-              <rect x="130" y="200" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="4.5s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="4.5s"/>
-              </rect>
-              <rect x="130" y="210" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="4.6s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="4.6s"/>
-              </rect>
-              <rect x="130" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="4.7s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="4.7s"/>
-              </rect>
-              <rect x="140" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="4.8s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="4.8s"/>
-              </rect>
-              <rect x="150" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="4.9s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="4.9s"/>
-              </rect>
-              <rect x="160" y="180" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="5.0s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="5.0s"/>
-              </rect>
-              <rect x="160" y="190" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="5.1s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="5.1s"/>
-              </rect>
-              <rect x="160" y="200" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="5.2s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="5.2s"/>
-              </rect>
-              <rect x="160" y="210" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="5.3s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="5.3s"/>
-              </rect>
-              <rect x="150" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="5.4s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="5.4s"/>
-              </rect>
-              <rect x="140" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="5.5s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="5.5s"/>
-              </rect>
-            </g>
-            
-            <!-- I - Position 3 (x=190) -->
-            <g id="I1">
-              <rect x="190" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="6.0s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="6.0s"/>
-              </rect>
-              <rect x="200" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="6.1s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="6.1s"/>
-              </rect>
-              <rect x="210" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="6.2s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="6.2s"/>
-              </rect>
-              <rect x="200" y="180" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="6.3s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="6.3s"/>
-              </rect>
-              <rect x="200" y="190" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="6.4s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="6.4s"/>
-              </rect>
-              <rect x="200" y="200" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="6.5s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="6.5s"/>
-              </rect>
-              <rect x="200" y="210" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="6.6s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="6.6s"/>
-              </rect>
-              <rect x="190" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="6.7s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="6.7s"/>
-              </rect>
-              <rect x="200" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="6.8s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="6.8s"/>
-              </rect>
-              <rect x="210" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="6.9s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="6.9s"/>
-              </rect>
-            </g>
-            
-            <!-- T - Position 4 (x=240) -->
-            <g id="T1">
-              <rect x="240" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="7.4s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="7.4s"/>
-              </rect>
-              <rect x="250" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="7.5s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="7.5s"/>
-              </rect>
-              <rect x="260" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="7.6s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="7.6s"/>
-              </rect>
-              <rect x="250" y="180" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="7.7s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="7.7s"/>
-              </rect>
-              <rect x="250" y="190" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="7.8s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="7.8s"/>
-              </rect>
-              <rect x="250" y="200" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="7.9s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="7.9s"/>
-              </rect>
-              <rect x="250" y="210" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="8.0s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="8.0s"/>
-              </rect>
-              <rect x="250" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="8.1s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="8.1s"/>
-              </rect>
-            </g>
-            
-            <!-- H - Position 5 (x=290) -->
-            <g id="H1">
-              <rect x="290" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="8.6s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="8.6s"/>
-              </rect>
-              <rect x="290" y="180" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="8.7s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="8.7s"/>
-              </rect>
-              <rect x="290" y="190" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="8.8s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="8.8s"/>
-              </rect>
-              <rect x="290" y="200" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="8.9s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="8.9s"/>
-              </rect>
-              <rect x="290" y="210" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="9.0s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="9.0s"/>
-              </rect>
-              <rect x="290" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="9.1s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="9.1s"/>
-              </rect>
-              <rect x="300" y="190" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="9.2s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="9.2s"/>
-              </rect>
-              <rect x="310" y="190" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="9.3s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="9.3s"/>
-              </rect>
-              <rect x="320" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="9.4s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="9.4s"/>
-              </rect>
-              <rect x="320" y="180" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="9.5s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="9.5s"/>
-              </rect>
-              <rect x="320" y="190" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="9.6s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="9.6s"/>
-              </rect>
-              <rect x="320" y="200" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="9.7s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="9.7s"/>
-              </rect>
-              <rect x="320" y="210" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="9.8s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="9.8s"/>
-              </rect>
-              <rect x="320" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="9.9s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="9.9s"/>
-              </rect>
-            </g>
-            
-            <!-- Y - Position 6 (x=350) -->
-            <g id="Y1">
-              <rect x="350" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="10.4s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="10.4s"/>
-              </rect>
-              <rect x="350" y="180" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="10.5s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="10.5s"/>
-              </rect>
-              <rect x="360" y="190" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="10.6s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="10.6s"/>
-              </rect>
-              <rect x="360" y="200" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="10.7s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="10.7s"/>
-              </rect>
-              <rect x="360" y="210" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="10.8s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="10.8s"/>
-              </rect>
-              <rect x="360" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="10.9s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="10.9s"/>
-              </rect>
-              <rect x="370" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="11.0s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="11.0s"/>
-              </rect>
-              <rect x="370" y="180" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="11.1s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="11.1s"/>
-              </rect>
-            </g>
-            
-            <!-- A - Position 7 (x=400) -->
-            <g id="A2">
-              <rect x="400" y="180" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="11.6s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="11.6s"/>
-              </rect>
-              <rect x="410" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="11.7s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="11.7s"/>
-              </rect>
-              <rect x="420" y="180" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="11.8s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="11.8s"/>
-              </rect>
-              <rect x="410" y="190" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="11.9s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="11.9s"/>
-              </rect>
-              <rect x="400" y="200" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="12.0s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="12.0s"/>
-              </rect>
-              <rect x="420" y="200" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="12.1s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="12.1s"/>
-              </rect>
-              <rect x="400" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="12.2s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="12.2s"/>
-              </rect>
-              <rect x="420" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="12.3s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="12.3s"/>
-              </rect>
-            </g>
-            
-            <!-- N - Position 8 (x=450) -->
-            <g id="N1">
-              <rect x="450" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="12.8s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="12.8s"/>
-              </rect>
-              <rect x="450" y="180" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="12.9s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="12.9s"/>
-              </rect>
-              <rect x="450" y="190" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="13.0s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="13.0s"/>
-              </rect>
-              <rect x="450" y="200" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="13.1s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="13.1s"/>
-              </rect>
-              <rect x="450" y="210" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="13.2s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="13.2s"/>
-              </rect>
-              <rect x="450" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="13.3s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="13.3s"/>
-              </rect>
-              <rect x="460" y="180" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="13.4s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="13.4s"/>
-              </rect>
-              <rect x="470" y="190" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="13.5s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="13.5s"/>
-              </rect>
-              <rect x="480" y="200" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="13.6s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="13.6s"/>
-              </rect>
-              <rect x="490" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="13.7s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="13.7s"/>
-              </rect>
-              <rect x="490" y="180" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="13.8s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="13.8s"/>
-              </rect>
-              <rect x="490" y="190" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="13.9s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="13.9s"/>
-              </rect>
-              <rect x="490" y="200" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="14.0s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="14.0s"/>
-              </rect>
-              <rect x="490" y="210" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="14.1s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="14.1s"/>
-              </rect>
-              <rect x="490" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="14.2s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="14.2s"/>
-              </rect>
-            </g>
-            
-            <!-- SPACE (40px) -->
-            
-            <!-- B - Position 9 (x=560) -->
-            <g id="B1">
-              <rect x="560" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="14.8s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="14.8s"/>
-              </rect>
-              <rect x="560" y="180" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="14.9s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="14.9s"/>
-              </rect>
-              <rect x="560" y="190" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="15.0s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="15.0s"/>
-              </rect>
-              <rect x="560" y="200" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="15.1s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="15.1s"/>
-              </rect>
-              <rect x="560" y="210" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="15.2s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="15.2s"/>
-              </rect>
-              <rect x="560" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="15.3s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="15.3s"/>
-              </rect>
-              <rect x="570" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="15.4s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="15.4s"/>
-              </rect>
-              <rect x="580" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="15.5s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="15.5s"/>
-              </rect>
-              <rect x="580" y="180" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="15.6s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="15.6s"/>
-              </rect>
-              <rect x="570" y="190" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="15.7s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="15.7s"/>
-              </rect>
-              <rect x="580" y="200" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="15.8s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="15.8s"/>
-              </rect>
-              <rect x="580" y="210" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="15.9s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="15.9s"/>
-              </rect>
-              <rect x="570" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="16.0s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="16.0s"/>
-              </rect>
-              <rect x="580" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="16.1s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="16.1s"/>
-              </rect>
-            </g>
-            
-            <!-- SPACE (40px) -->
-            
-            <!-- R - Position 10 (x=650) -->
-            <g id="R1">
-              <rect x="650" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="16.7s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="16.7s"/>
-              </rect>
-              <rect x="650" y="180" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="16.8s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="16.8s"/>
-              </rect>
-              <rect x="650" y="190" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="16.9s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="16.9s"/>
-              </rect>
-              <rect x="650" y="200" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="17.0s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="17.0s"/>
-              </rect>
-              <rect x="650" y="210" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="17.1s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="17.1s"/>
-              </rect>
-              <rect x="650" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="17.2s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="17.2s"/>
-              </rect>
-              <rect x="660" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="17.3s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="17.3s"/>
-              </rect>
-              <rect x="670" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="17.4s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="17.4s"/>
-              </rect>
-              <rect x="680" y="180" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="17.5s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="17.5s"/>
-              </rect>
-              <rect x="680" y="190" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="17.6s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="17.6s"/>
-              </rect>
-              <rect x="660" y="200" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="17.7s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="17.7s"/>
-              </rect>
-              <rect x="670" y="210" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="17.8s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="17.8s"/>
-              </rect>
-              <rect x="680" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="17.9s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="17.9s"/>
-              </rect>
-            </g>
-            
-            <!-- A - Position 11 (x=710) -->
-            <g id="A3">
-              <rect x="710" y="180" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="18.4s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="18.4s"/>
-              </rect>
-              <rect x="720" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="18.5s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="18.5s"/>
-              </rect>
-              <rect x="730" y="180" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="18.6s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="18.6s"/>
-              </rect>
-              <rect x="720" y="190" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="18.7s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="18.7s"/>
-              </rect>
-              <rect x="710" y="200" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="18.8s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="18.8s"/>
-              </rect>
-              <rect x="730" y="200" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="18.9s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="18.9s"/>
-              </rect>
-              <rect x="710" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="19.0s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="19.0s"/>
-              </rect>
-              <rect x="730" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="19.1s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="19.1s"/>
-              </rect>
-            </g>
-            
-            <!-- J - Position 12 (x=760) -->
-            <g id="J1">
-              <rect x="760" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="19.6s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="19.6s"/>
-              </rect>
-              <rect x="770" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="19.7s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="19.7s"/>
-              </rect>
-              <rect x="780" y="170" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="19.8s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="19.8s"/>
-              </rect>
-              <rect x="770" y="180" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="19.9s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="19.9s"/>
-              </rect>
-              <rect x="770" y="190" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="20.0s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="20.0s"/>
-              </rect>
-              <rect x="770" y="200" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="20.1s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="20.1s"/>
-              </rect>
-              <rect x="770" y="210" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="20.2s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="20.2s"/>
-              </rect>
-              <rect x="760" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="20.3s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="20.3s"/>
-              </rect>
-              <rect x="770" y="220" width="10" height="10" class="letter-dot" rx="2">
-                <animate attributeName="opacity" values="1;1;0" dur="0.3s" begin="20.4s"/>
-                <animate attributeName="fill" values="#39d353;#ff0000;#000000" dur="0.3s" begin="20.4s"/>
-              </rect>
-            </g>
-            
-            <!-- RED SNAKE with multiple segments moving across letters -->
-            <g id="red-snake">
-              <!-- Snake Head (bigger and red) -->
-              <circle cx="50" cy="195" r="12" class="snake-head" filter="url(#redGlow)">
-                <animateMotion dur="22s" repeatCount="indefinite">
-                  <path d="M 50 195 
-                           L 90 195 
-                           L 145 195 
-                           L 200 195 
-                           L 250 195 
-                           L 305 195 
-                           L 365 195 
-                           L 415 195 
-                           L 470 195 
-                           L 570 195 
-                           L 665 195 
-                           L 720 195 
-                           L 770 195 
-                           L 850 195"/>
-                </animateMotion>
-              </circle>
-              
-              <!-- Snake Body Segment 1 -->
-              <circle cx="35" cy="195" r="9" class="snake-body">
-                <animateMotion dur="22s" repeatCount="indefinite" begin="0.4s">
-                  <path d="M 50 195 
-                           L 90 195 
-                           L 145 195 
-                           L 200 195 
-                           L 250 195 
-                           L 305 195 
-                           L 365 195 
-                           L 415 195 
-                           L 470 195 
-                           L 570 195 
-                           L 665 195 
-                           L 720 195 
-                           L 770 195 
-                           L 850 195"/>
-                </animateMotion>
-              </circle>
-              
-              <!-- Snake Body Segment 2 -->
-              <circle cx="20" cy="195" r="7" class="snake-body">
-                <animateMotion dur="22s" repeatCount="indefinite" begin="0.8s">
-                  <path d="M 50 195 
-                           L 90 195 
-                           L 145 195 
-                           L 200 195 
-                           L 250 195 
-                           L 305 195 
-                           L 365 195 
-                           L 415 195 
-                           L 470 195 
-                           L 570 195 
-                           L 665 195 
-                           L 720 195 
-                           L 770 195 
-                           L 850 195"/>
-                </animateMotion>
-              </circle>
-              
-              <!-- Snake Body Segment 3 -->
-              <circle cx="5" cy="195" r="5" class="snake-body">
-                <animateMotion dur="22s" repeatCount="indefinite" begin="1.2s">
-                  <path d="M 50 195 
-                           L 90 195 
-                           L 145 195 
-                           L 200 195 
-                           L 250 195 
-                           L 305 195 
-                           L 365 195 
-                           L 415 195 
-                           L 470 195 
-                           L 570 195 
-                           L 665 195 
-                           L 720 195 
-                           L 770 195 
-                           L 850 195"/>
-                </animateMotion>
-              </circle>
-              
-              <!-- Snake eyes -->
-              <circle cx="55" cy="192" r="2" fill="white">
-                <animateMotion dur="22s" repeatCount="indefinite">
-                  <path d="M 50 195 
-                           L 90 195 
-                           L 145 195 
-                           L 200 195 
-                           L 250 195 
-                           L 305 195 
-                           L 365 195 
-                           L 415 195 
-                           L 470 195 
-                           L 570 195 
-                           L 665 195 
-                           L 720 195 
-                           L 770 195 
-                           L 850 195"/>
-                </animateMotion>
-              </circle>
-              <circle cx="55" cy="198" r="2" fill="white">
-                <animateMotion dur="22s" repeatCount="indefinite">
-                  <path d="M 50 195 
-                           L 90 195 
-                           L 145 195 
-                           L 200 195 
-                           L 250 195 
-                           L 305 195 
-                           L 365 195 
-                           L 415 195 
-                           L 470 195 
-                           L 570 195 
-                           L 665 195 
-                           L 720 195 
-                           L 770 195 
-                           L 850 195"/>
-                </animateMotion>
-              </circle>
-            </g>
-            
-            <!-- Progress Messages -->
-            <text x="700" y="320" class="title" font-size="16" text-anchor="middle" opacity="0">
-              🔥 Red Snake is devouring ADITHYAN... 🔥
-              <animate attributeName="opacity" values="0;1;1;0" dur="3s" begin="2s"/>
-            </text>
-            
-            <text x="700" y="320" class="title" font-size="16" text-anchor="middle" opacity="0">
-              😈 B RAJ is next on the menu... 😈
-              <animate attributeName="opacity" values="0;1;1;0" dur="3s" begin="14s"/>
-            </text>
-            
-            <!-- Final Message -->
-            <text x="700" y="350" class="title" font-size="20" text-anchor="middle" fill="#ff0000" opacity="0">
-              🎉 FEAST COMPLETE! ADITHYAN B RAJ FULLY DEVOURED! 🎉
-              <animate attributeName="opacity" values="0;1" dur="1s" begin="20.5s"/>
-            </text>
-          </svg>
+          # Create summary file
+          cat > dist/pattern-summary.md << 'EOF'
+          # ADITHYAN B RAJ Snake Pattern
+          
+          This snake animation is generated from ~90 micro-repositories, each representing a pixel in the letter pattern.
+          
+          ## Pattern Breakdown:
+          - **A**: 8 repositories (A1-A8)
+          - **D**: 10 repositories (D1-D10)  
+          - **I**: 7 repositories (I1-I7)
+          - **T**: 6 repositories (T1-T6)
+          - **H**: 10 repositories (H1-H10)
+          - **Y**: 6 repositories (Y1-Y6)
+          - **A**: 8 repositories (A2-1 to A2-8)
+          - **N**: 10 repositories (N1-N10)
+          - **B**: 11 repositories (B1-B11)
+          - **R**: 10 repositories (R1-R10)
+          - **A**: 8 repositories (A3-1 to A3-8)
+          - **J**: 7 repositories (J1-J7)
+          
+          Each repository contains commits that make it appear on the GitHub contribution graph, forming the letters that the snake will eat!
           EOF
           
       - uses: peaceiris/actions-gh-pages@v3
@@ -787,3 +254,24 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: output
+
+  cleanup-repos:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.create_repos == 'false' }}
+    
+    steps:
+      - name: Setup GitHub CLI
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | gh auth login --with-token
+          
+      - name: Delete pattern repositories (optional cleanup)
+        run: |
+          echo "This job can be used to clean up the pattern repositories if needed"
+          echo "Uncomment the lines below to delete all pattern repos"
+          
+          # WARNING: This will delete all pattern repositories!
+          # gh repo delete A1-top-left --confirm
+          # gh repo delete A2-top-center --confirm
+          # ... (continue for all repos)
+          
+          echo "Cleanup not executed - uncomment lines in workflow to enable"
