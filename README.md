@@ -158,7 +158,6 @@ Other        55 mins         ░░░░░░░░░░░░░░░░░
 </div>
 
 
-<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjN1Mm5pdXhpenhtdDA0bzcxdHU3N3R2OWk3Mm9mdjNsOXg1ZzV1aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Mddye3t5JUYVAEtd2t/giphy.gif" width="200" height="100" alt="Blinding Lights Accent"/>
 
 </td>
 </tr>
