@@ -1,0 +1,187 @@
+<svg width="900" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #0d1117; }
+      .grid-line { stroke: #21262d; stroke-width: 1; }
+      .name-letter { 
+        font-family: 'Courier New', monospace; 
+        font-size: 18px; 
+        fill: #39d353; 
+        font-weight: bold;
+      }
+      .snake-body { fill: #1f6feb; }
+      .snake-head { fill: #58a6ff; }
+      .eaten { opacity: 0; }
+      .grid-dot { fill: #21262d; }
+      .active-dot { fill: #39d353; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect class="bg" width="900" height="300"/>
+  
+  <!-- Grid lines -->
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="none" stroke="#21262d" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="900" height="300" fill="url(#grid)"/>
+  
+  <!-- Grid dots forming your name pattern -->
+  <!-- A -->
+  <rect x="40" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="50" y="110" width="8" height="8" class="active-dot"/>
+  <rect x="60" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="50" y="130" width="8" height="8" class="active-dot"/>
+  <rect x="40" y="140" width="8" height="8" class="active-dot"/>
+  <rect x="60" y="140" width="8" height="8" class="active-dot"/>
+  <rect x="40" y="160" width="8" height="8" class="active-dot"/>
+  <rect x="60" y="160" width="8" height="8" class="active-dot"/>
+  
+  <!-- D -->
+  <rect x="80" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="80" y="130" width="8" height="8" class="active-dot"/>
+  <rect x="80" y="140" width="8" height="8" class="active-dot"/>
+  <rect x="80" y="150" width="8" height="8" class="active-dot"/>
+  <rect x="80" y="160" width="8" height="8" class="active-dot"/>
+  <rect x="90" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="100" y="130" width="8" height="8" class="active-dot"/>
+  <rect x="100" y="140" width="8" height="8" class="active-dot"/>
+  <rect x="90" y="160" width="8" height="8" class="active-dot"/>
+  
+  <!-- I -->
+  <rect x="120" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="130" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="140" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="130" y="130" width="8" height="8" class="active-dot"/>
+  <rect x="130" y="140" width="8" height="8" class="active-dot"/>
+  <rect x="130" y="150" width="8" height="8" class="active-dot"/>
+  <rect x="120" y="160" width="8" height="8" class="active-dot"/>
+  <rect x="130" y="160" width="8" height="8" class="active-dot"/>
+  <rect x="140" y="160" width="8" height="8" class="active-dot"/>
+  
+  <!-- T -->
+  <rect x="160" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="170" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="180" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="170" y="130" width="8" height="8" class="active-dot"/>
+  <rect x="170" y="140" width="8" height="8" class="active-dot"/>
+  <rect x="170" y="150" width="8" height="8" class="active-dot"/>
+  <rect x="170" y="160" width="8" height="8" class="active-dot"/>
+  
+  <!-- H -->
+  <rect x="200" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="200" y="130" width="8" height="8" class="active-dot"/>
+  <rect x="200" y="140" width="8" height="8" class="active-dot"/>
+  <rect x="200" y="150" width="8" height="8" class="active-dot"/>
+  <rect x="200" y="160" width="8" height="8" class="active-dot"/>
+  <rect x="210" y="140" width="8" height="8" class="active-dot"/>
+  <rect x="220" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="220" y="130" width="8" height="8" class="active-dot"/>
+  <rect x="220" y="140" width="8" height="8" class="active-dot"/>
+  <rect x="220" y="150" width="8" height="8" class="active-dot"/>
+  <rect x="220" y="160" width="8" height="8" class="active-dot"/>
+  
+  <!-- Y -->
+  <rect x="240" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="260" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="240" y="130" width="8" height="8" class="active-dot"/>
+  <rect x="260" y="130" width="8" height="8" class="active-dot"/>
+  <rect x="250" y="140" width="8" height="8" class="active-dot"/>
+  <rect x="250" y="150" width="8" height="8" class="active-dot"/>
+  <rect x="250" y="160" width="8" height="8" class="active-dot"/>
+  
+  <!-- A -->
+  <rect x="280" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="290" y="110" width="8" height="8" class="active-dot"/>
+  <rect x="300" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="290" y="130" width="8" height="8" class="active-dot"/>
+  <rect x="280" y="140" width="8" height="8" class="active-dot"/>
+  <rect x="300" y="140" width="8" height="8" class="active-dot"/>
+  <rect x="280" y="160" width="8" height="8" class="active-dot"/>
+  <rect x="300" y="160" width="8" height="8" class="active-dot"/>
+  
+  <!-- N -->
+  <rect x="320" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="320" y="130" width="8" height="8" class="active-dot"/>
+  <rect x="320" y="140" width="8" height="8" class="active-dot"/>
+  <rect x="320" y="150" width="8" height="8" class="active-dot"/>
+  <rect x="320" y="160" width="8" height="8" class="active-dot"/>
+  <rect x="330" y="130" width="8" height="8" class="active-dot"/>
+  <rect x="340" y="140" width="8" height="8" class="active-dot"/>
+  <rect x="350" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="350" y="130" width="8" height="8" class="active-dot"/>
+  <rect x="350" y="140" width="8" height="8" class="active-dot"/>
+  <rect x="350" y="150" width="8" height="8" class="active-dot"/>
+  <rect x="350" y="160" width="8" height="8" class="active-dot"/>
+  
+  <!-- B -->
+  <rect x="400" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="400" y="130" width="8" height="8" class="active-dot"/>
+  <rect x="400" y="140" width="8" height="8" class="active-dot"/>
+  <rect x="400" y="150" width="8" height="8" class="active-dot"/>
+  <rect x="400" y="160" width="8" height="8" class="active-dot"/>
+  <rect x="410" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="420" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="420" y="130" width="8" height="8" class="active-dot"/>
+  <rect x="410" y="140" width="8" height="8" class="active-dot"/>
+  <rect x="420" y="150" width="8" height="8" class="active-dot"/>
+  <rect x="410" y="160" width="8" height="8" class="active-dot"/>
+  <rect x="420" y="160" width="8" height="8" class="active-dot"/>
+  
+  <!-- R -->
+  <rect x="460" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="460" y="130" width="8" height="8" class="active-dot"/>
+  <rect x="460" y="140" width="8" height="8" class="active-dot"/>
+  <rect x="460" y="150" width="8" height="8" class="active-dot"/>
+  <rect x="460" y="160" width="8" height="8" class="active-dot"/>
+  <rect x="470" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="480" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="480" y="130" width="8" height="8" class="active-dot"/>
+  <rect x="470" y="140" width="8" height="8" class="active-dot"/>
+  <rect x="470" y="150" width="8" height="8" class="active-dot"/>
+  <rect x="480" y="160" width="8" height="8" class="active-dot"/>
+  
+  <!-- A -->
+  <rect x="500" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="510" y="110" width="8" height="8" class="active-dot"/>
+  <rect x="520" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="510" y="130" width="8" height="8" class="active-dot"/>
+  <rect x="500" y="140" width="8" height="8" class="active-dot"/>
+  <rect x="520" y="140" width="8" height="8" class="active-dot"/>
+  <rect x="500" y="160" width="8" height="8" class="active-dot"/>
+  <rect x="520" y="160" width="8" height="8" class="active-dot"/>
+  
+  <!-- J -->
+  <rect x="540" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="550" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="560" y="120" width="8" height="8" class="active-dot"/>
+  <rect x="550" y="130" width="8" height="8" class="active-dot"/>
+  <rect x="550" y="140" width="8" height="8" class="active-dot"/>
+  <rect x="550" y="150" width="8" height="8" class="active-dot"/>
+  <rect x="540" y="160" width="8" height="8" class="active-dot"/>
+  <rect x="550" y="160" width="8" height="8" class="active-dot"/>
+  
+  <!-- Animated Snake -->
+  <g id="snake">
+    <!-- Snake body segments -->
+    <circle cx="20" cy="140" r="6" class="snake-body">
+      <animateMotion dur="8s" repeatCount="indefinite">
+        <path d="M 0 0 L 600 0"/>
+      </animateMotion>
+    </circle>
+    
+    <!-- Snake head -->
+    <circle cx="30" cy="140" r="8" class="snake-head">
+      <animateMotion dur="8s" repeatCount="indefinite">
+        <path d="M 0 0 L 600 0"/>
+      </animateMotion>
+    </circle>
+  </g>
+  
+  <!-- Title -->
+  <text x="450" y="50" class="name-letter" font-size="24" text-anchor="middle">
+    🐍 Snake eating ADITHYAN B RAJ
+  </text>
+</svg>
