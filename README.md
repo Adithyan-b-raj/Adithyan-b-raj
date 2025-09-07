@@ -160,26 +160,7 @@ Other        55 mins         ░░░░░░░░░░░░░░░░░
 <!-- Animated Music Section -->
 <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=2000&pause=1000&color=FF6B9D&center=true&vCenter=true&width=600&lines=🌆+Blinding+Lights+Vibes...;🎵+The+Weeknd+-+Blinding+Lights;🌙+Neon+City+Nights;🎆+Synthwave+Energy!" alt="Blinding Lights Animation" />
 
-<!-- Favorite Song Card -->
-<table align="center">
-<tr>
-<td width="300px" align="center">
 
-**🌆 BLINDING LIGHTS 🌆**
-
-🎵 **The Weeknd - Blinding Lights**
-
-<!-- Neon-style Spotify button -->
-[![Spotify](https://spotify-github-profile.kittinanx.com/api/view?uid=31qf4aaodpi4nb6iluyfdvozsmyu&cover_image=true&theme=novatorem&show_offline=false&background_color=121212&interchange=true&bar_color=53b14f&bar_color_cover=false)](https://github.com/kittinan/spotify-github-profile)
-
-<!-- City lights themed quote -->
-🌙 *"I feel like I'm just missing something when you're gone"* 🌙
-
-<!-- Synthwave aesthetic elements -->
-🌆 **Genre:** Synthpop • Synthwave • Electronic 🌆
-
-<!-- Subtle Blinding Lights Visual Accent -->
-<br>
 <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjN1Mm5pdXhpenhtdDA0bzcxdHU3N3R2OWk3Mm9mdjNsOXg1ZzV1aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Mddye3t5JUYVAEtd2t/giphy.gif" width="200" height="100" alt="Blinding Lights Accent"/>
 
 </td>
