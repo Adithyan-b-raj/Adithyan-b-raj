@@ -140,15 +140,11 @@ Other        55 mins         ░░░░░░░░░░░░░░░░░
 ### 💭 **Random Dev Thoughts**
 <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight"/>
 
-### 🎵 **Currently Vibing To**
-
-<div align="center">
-
 <!-- Subtle Synthwave Background Elements -->
 <div align="center">
 
 <!-- REAL-TIME SPOTIFY WIDGET -->
-## 🎵 Currently Listening To:
+### 🎵 **Currently Vibing To**
 [![Spotify](https://spotify-github-profile.kittinanx.com/api/view?uid=31qf4aaodpi4nb6iluyfdvozsmyu&cover_image=true&theme=novatorem&show_offline=false&background_color=121212&interchange=true&bar_color=53b14f&bar_color_cover=false)](https://github.com/kittinan/spotify-github-profile)
 
 *🎵 Live updates when I'm jamming to music on Spotify!*
