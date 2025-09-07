@@ -1,11 +1,8 @@
 <div align="center">
 
-![Snake animation](https://github.com/Adithyan-b-raj/Adithyan-b-raj/blob/output/github-snake-dark.svg)
-
 ## About Me
-- 🔭 I'm currently working on...
-- 🌱 I'm currently learning...
-# 🌟 Welcome to Adithyanbraj's Universe 🌟
+
+# 🌟 Well I'm Adithyan B Raj🌟
 
 <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=32&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+there!+I'm+Adithyanbraj+👋;Full+Stack+Developer+💻;AI+%26+ML+Enthusiast+🤖;Always+Learning+Something+New+🚀" alt="Typing SVG" />
 
@@ -14,6 +11,8 @@
 ---
 
 <div align="center">
+    
+![Snake animation](https://github.com/Adithyan-b-raj/Adithyan-b-raj/blob/output/github-snake-dark.svg)
 
 ## 🎨 **The Digital Craftsman** 🎨
 
