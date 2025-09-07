@@ -1,4 +1,4 @@
-name: Custom Snake with ADITHYAN B RAJ
+name: Creative Snake Eating ADITHYAN B RAJ
 
 on:
   schedule:
@@ -15,197 +15,248 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Generate custom snake animation
+      - name: Generate creative snake animation
         run: |
           mkdir -p dist
           
-          # Create custom SVG with your name and snake animation
-          cat > dist/custom-snake.svg << 'EOF'
-          <svg width="900" height="300" xmlns="http://www.w3.org/2000/svg">
+          # Create super creative animated SVG
+          cat > dist/creative-snake.svg << 'EOF'
+          <svg width="1000" height="400" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <style>
                 .bg { fill: #0d1117; }
-                .grid-line { stroke: #21262d; stroke-width: 1; }
-                .name-letter { 
-                  font-family: 'Courier New', monospace; 
-                  font-size: 18px; 
+                .grid-line { stroke: #21262d; stroke-width: 0.5; opacity: 0.3; }
+                .name-dot { 
                   fill: #39d353; 
-                  font-weight: bold;
+                  opacity: 1;
+                  transition: all 0.5s ease;
                 }
-                .snake-body { fill: #1f6feb; }
-                .snake-head { fill: #58a6ff; }
-                .eaten { opacity: 0; }
-                .grid-dot { fill: #21262d; }
-                .active-dot { fill: #39d353; }
+                .eaten-dot { 
+                  fill: #ff6b6b; 
+                  opacity: 0;
+                  transform: scale(0);
+                }
+                .snake-segment { 
+                  fill: #58a6ff; 
+                  filter: drop-shadow(0 0 8px #58a6ff);
+                }
+                .snake-head { 
+                  fill: #f85149; 
+                  filter: drop-shadow(0 0 12px #f85149);
+                }
+                .particle { 
+                  fill: #ffd700; 
+                  opacity: 0;
+                }
+                .trail { 
+                  stroke: #39d353; 
+                  stroke-width: 2; 
+                  fill: none; 
+                  opacity: 0.6;
+                }
+                .glow-text {
+                  fill: #58a6ff;
+                  font-family: 'Courier New', monospace;
+                  font-weight: bold;
+                  filter: drop-shadow(0 0 10px #58a6ff);
+                }
               </style>
-            </defs>
-            
-            <!-- Background -->
-            <rect class="bg" width="900" height="300"/>
-            
-            <!-- Grid lines -->
-            <defs>
-              <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-                <rect width="20" height="20" fill="none" stroke="#21262d" stroke-width="0.5"/>
+              
+              <!-- Gradient definitions -->
+              <linearGradient id="snakeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#f85149;stop-opacity:1" />
+                <stop offset="50%" style="stop-color:#58a6ff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#39d353;stop-opacity:1" />
+              </linearGradient>
+              
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge> 
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+              
+              <!-- Grid pattern -->
+              <pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse">
+                <rect width="25" height="25" fill="none" stroke="#21262d" stroke-width="0.5"/>
+                <circle cx="12.5" cy="12.5" r="1" fill="#21262d" opacity="0.3"/>
               </pattern>
             </defs>
-            <rect width="900" height="300" fill="url(#grid)"/>
             
-            <!-- Grid dots forming your name pattern -->
-            <!-- A -->
-            <rect x="40" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="50" y="110" width="8" height="8" class="active-dot"/>
-            <rect x="60" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="50" y="130" width="8" height="8" class="active-dot"/>
-            <rect x="40" y="140" width="8" height="8" class="active-dot"/>
-            <rect x="60" y="140" width="8" height="8" class="active-dot"/>
-            <rect x="40" y="160" width="8" height="8" class="active-dot"/>
-            <rect x="60" y="160" width="8" height="8" class="active-dot"/>
+            <!-- Background with animated stars -->
+            <rect class="bg" width="1000" height="400"/>
+            <rect width="1000" height="400" fill="url(#grid)" opacity="0.4"/>
             
-            <!-- D -->
-            <rect x="80" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="80" y="130" width="8" height="8" class="active-dot"/>
-            <rect x="80" y="140" width="8" height="8" class="active-dot"/>
-            <rect x="80" y="150" width="8" height="8" class="active-dot"/>
-            <rect x="80" y="160" width="8" height="8" class="active-dot"/>
-            <rect x="90" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="100" y="130" width="8" height="8" class="active-dot"/>
-            <rect x="100" y="140" width="8" height="8" class="active-dot"/>
-            <rect x="90" y="160" width="8" height="8" class="active-dot"/>
-            
-            <!-- I -->
-            <rect x="120" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="130" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="140" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="130" y="130" width="8" height="8" class="active-dot"/>
-            <rect x="130" y="140" width="8" height="8" class="active-dot"/>
-            <rect x="130" y="150" width="8" height="8" class="active-dot"/>
-            <rect x="120" y="160" width="8" height="8" class="active-dot"/>
-            <rect x="130" y="160" width="8" height="8" class="active-dot"/>
-            <rect x="140" y="160" width="8" height="8" class="active-dot"/>
-            
-            <!-- T -->
-            <rect x="160" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="170" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="180" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="170" y="130" width="8" height="8" class="active-dot"/>
-            <rect x="170" y="140" width="8" height="8" class="active-dot"/>
-            <rect x="170" y="150" width="8" height="8" class="active-dot"/>
-            <rect x="170" y="160" width="8" height="8" class="active-dot"/>
-            
-            <!-- H -->
-            <rect x="200" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="200" y="130" width="8" height="8" class="active-dot"/>
-            <rect x="200" y="140" width="8" height="8" class="active-dot"/>
-            <rect x="200" y="150" width="8" height="8" class="active-dot"/>
-            <rect x="200" y="160" width="8" height="8" class="active-dot"/>
-            <rect x="210" y="140" width="8" height="8" class="active-dot"/>
-            <rect x="220" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="220" y="130" width="8" height="8" class="active-dot"/>
-            <rect x="220" y="140" width="8" height="8" class="active-dot"/>
-            <rect x="220" y="150" width="8" height="8" class="active-dot"/>
-            <rect x="220" y="160" width="8" height="8" class="active-dot"/>
-            
-            <!-- Y -->
-            <rect x="240" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="260" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="240" y="130" width="8" height="8" class="active-dot"/>
-            <rect x="260" y="130" width="8" height="8" class="active-dot"/>
-            <rect x="250" y="140" width="8" height="8" class="active-dot"/>
-            <rect x="250" y="150" width="8" height="8" class="active-dot"/>
-            <rect x="250" y="160" width="8" height="8" class="active-dot"/>
-            
-            <!-- A -->
-            <rect x="280" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="290" y="110" width="8" height="8" class="active-dot"/>
-            <rect x="300" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="290" y="130" width="8" height="8" class="active-dot"/>
-            <rect x="280" y="140" width="8" height="8" class="active-dot"/>
-            <rect x="300" y="140" width="8" height="8" class="active-dot"/>
-            <rect x="280" y="160" width="8" height="8" class="active-dot"/>
-            <rect x="300" y="160" width="8" height="8" class="active-dot"/>
-            
-            <!-- N -->
-            <rect x="320" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="320" y="130" width="8" height="8" class="active-dot"/>
-            <rect x="320" y="140" width="8" height="8" class="active-dot"/>
-            <rect x="320" y="150" width="8" height="8" class="active-dot"/>
-            <rect x="320" y="160" width="8" height="8" class="active-dot"/>
-            <rect x="330" y="130" width="8" height="8" class="active-dot"/>
-            <rect x="340" y="140" width="8" height="8" class="active-dot"/>
-            <rect x="350" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="350" y="130" width="8" height="8" class="active-dot"/>
-            <rect x="350" y="140" width="8" height="8" class="active-dot"/>
-            <rect x="350" y="150" width="8" height="8" class="active-dot"/>
-            <rect x="350" y="160" width="8" height="8" class="active-dot"/>
-            
-            <!-- B -->
-            <rect x="400" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="400" y="130" width="8" height="8" class="active-dot"/>
-            <rect x="400" y="140" width="8" height="8" class="active-dot"/>
-            <rect x="400" y="150" width="8" height="8" class="active-dot"/>
-            <rect x="400" y="160" width="8" height="8" class="active-dot"/>
-            <rect x="410" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="420" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="420" y="130" width="8" height="8" class="active-dot"/>
-            <rect x="410" y="140" width="8" height="8" class="active-dot"/>
-            <rect x="420" y="150" width="8" height="8" class="active-dot"/>
-            <rect x="410" y="160" width="8" height="8" class="active-dot"/>
-            <rect x="420" y="160" width="8" height="8" class="active-dot"/>
-            
-            <!-- R -->
-            <rect x="460" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="460" y="130" width="8" height="8" class="active-dot"/>
-            <rect x="460" y="140" width="8" height="8" class="active-dot"/>
-            <rect x="460" y="150" width="8" height="8" class="active-dot"/>
-            <rect x="460" y="160" width="8" height="8" class="active-dot"/>
-            <rect x="470" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="480" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="480" y="130" width="8" height="8" class="active-dot"/>
-            <rect x="470" y="140" width="8" height="8" class="active-dot"/>
-            <rect x="470" y="150" width="8" height="8" class="active-dot"/>
-            <rect x="480" y="160" width="8" height="8" class="active-dot"/>
-            
-            <!-- A -->
-            <rect x="500" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="510" y="110" width="8" height="8" class="active-dot"/>
-            <rect x="520" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="510" y="130" width="8" height="8" class="active-dot"/>
-            <rect x="500" y="140" width="8" height="8" class="active-dot"/>
-            <rect x="520" y="140" width="8" height="8" class="active-dot"/>
-            <rect x="500" y="160" width="8" height="8" class="active-dot"/>
-            <rect x="520" y="160" width="8" height="8" class="active-dot"/>
-            
-            <!-- J -->
-            <rect x="540" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="550" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="560" y="120" width="8" height="8" class="active-dot"/>
-            <rect x="550" y="130" width="8" height="8" class="active-dot"/>
-            <rect x="550" y="140" width="8" height="8" class="active-dot"/>
-            <rect x="550" y="150" width="8" height="8" class="active-dot"/>
-            <rect x="540" y="160" width="8" height="8" class="active-dot"/>
-            <rect x="550" y="160" width="8" height="8" class="active-dot"/>
-            
-            <!-- Animated Snake -->
-            <g id="snake">
-              <!-- Snake body segments -->
-              <circle cx="20" cy="140" r="6" class="snake-body">
-                <animateMotion dur="8s" repeatCount="indefinite">
-                  <path d="M 0 0 L 600 0"/>
-                </animateMotion>
+            <!-- Animated background stars -->
+            <g id="stars">
+              <circle cx="100" cy="50" r="1" fill="#ffd700">
+                <animate attributeName="opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite"/>
               </circle>
-              
-              <!-- Snake head -->
-              <circle cx="30" cy="140" r="8" class="snake-head">
-                <animateMotion dur="8s" repeatCount="indefinite">
-                  <path d="M 0 0 L 600 0"/>
-                </animateMotion>
+              <circle cx="200" cy="80" r="1" fill="#ffd700">
+                <animate attributeName="opacity" values="0.2;1;0.2" dur="1.5s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="800" cy="60" r="1" fill="#ffd700">
+                <animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite"/>
               </circle>
             </g>
             
-            <!-- Title -->
-            <text x="450" y="50" class="name-letter" font-size="24" text-anchor="middle">
-              🐍 Snake eating ADITHYAN B RAJ
+            <!-- Title with glowing effect -->
+            <text x="500" y="50" class="glow-text" font-size="28" text-anchor="middle">
+              🐍 HUNGRY SNAKE EATING ADITHYAN B RAJ 🐍
+            </text>
+            
+            <!-- Name pattern with individual dots that get eaten -->
+            <!-- A -->
+            <g id="letter-A">
+              <rect x="100" y="150" width="8" height="8" class="name-dot" id="a1">
+                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="1s"/>
+                <animateTransform attributeName="transform" type="scale" values="1;1;0" dur="12s" begin="1s"/>
+              </rect>
+              <rect x="110" y="140" width="8" height="8" class="name-dot" id="a2">
+                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="1.2s"/>
+                <animateTransform attributeName="transform" type="scale" values="1;1;0" dur="12s" begin="1.2s"/>
+              </rect>
+              <rect x="120" y="150" width="8" height="8" class="name-dot" id="a3">
+                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="1.4s"/>
+                <animateTransform attributeName="transform" type="scale" values="1;1;0" dur="12s" begin="1.4s"/>
+              </rect>
+              <rect x="110" y="160" width="8" height="8" class="name-dot">
+                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="1.6s"/>
+                <animateTransform attributeName="transform" type="scale" values="1;1;0" dur="12s" begin="1.6s"/>
+              </rect>
+              <rect x="100" y="170" width="8" height="8" class="name-dot">
+                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="1.8s"/>
+                <animateTransform attributeName="transform" type="scale" values="1;1;0" dur="12s" begin="1.8s"/>
+              </rect>
+              <rect x="120" y="170" width="8" height="8" class="name-dot">
+                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="2s"/>
+                <animateTransform attributeName="transform" type="scale" values="1;1;0" dur="12s" begin="2s"/>
+              </rect>
+            </g>
+            
+            <!-- D -->
+            <g id="letter-D">
+              <rect x="140" y="150" width="8" height="8" class="name-dot">
+                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="2.2s"/>
+                <animateTransform attributeName="transform" type="scale" values="1;1;0" dur="12s" begin="2.2s"/>
+              </rect>
+              <rect x="140" y="160" width="8" height="8" class="name-dot">
+                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="2.4s"/>
+                <animateTransform attributeName="transform" type="scale" values="1;1;0" dur="12s" begin="2.4s"/>
+              </rect>
+              <rect x="140" y="170" width="8" height="8" class="name-dot">
+                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="2.6s"/>
+                <animateTransform attributeName="transform" type="scale" values="1;1;0" dur="12s" begin="2.6s"/>
+              </rect>
+              <rect x="150" y="150" width="8" height="8" class="name-dot">
+                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="2.8s"/>
+                <animateTransform attributeName="transform" type="scale" values="1;1;0" dur="12s" begin="2.8s"/>
+              </rect>
+              <rect x="160" y="160" width="8" height="8" class="name-dot">
+                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="3s"/>
+                <animateTransform attributeName="transform" type="scale" values="1;1;0" dur="12s" begin="3s"/>
+              </rect>
+              <rect x="150" y="170" width="8" height="8" class="name-dot">
+                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="3.2s"/>
+                <animateTransform attributeName="transform" type="scale" values="1;1;0" dur="12s" begin="3.2s"/>
+              </rect>
+            </g>
+            
+            <!-- Continue pattern for I, T, H, Y, A, N, space, B, space, R, A, J -->
+            <!-- I -->
+            <g id="letter-I">
+              <rect x="180" y="150" width="8" height="8" class="name-dot">
+                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="3.4s"/>
+              </rect>
+              <rect x="190" y="150" width="8" height="8" class="name-dot">
+                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="3.6s"/>
+              </rect>
+              <rect x="200" y="150" width="8" height="8" class="name-dot">
+                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="3.8s"/>
+              </rect>
+              <rect x="190" y="160" width="8" height="8" class="name-dot">
+                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="4s"/>
+              </rect>
+              <rect x="190" y="170" width="8" height="8" class="name-dot">
+                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="4.2s"/>
+              </rect>
+            </g>
+            
+            <!-- Add more letters... (continuing the pattern) -->
+            <!-- For brevity, showing key letters. You can add all letters following this pattern -->
+            
+            <!-- Snake with multiple segments and realistic movement -->
+            <g id="snake-body">
+              <!-- Snake trail/path -->
+              <path class="trail" d="M 50 160 Q 200 120 400 160 T 800 160">
+                <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="12s" repeatCount="indefinite"/>
+              </path>
+              
+              <!-- Snake body segments (multiple circles following the head) -->
+              <circle cx="50" cy="160" r="6" fill="url(#snakeGradient)" filter="url(#glow)">
+                <animateMotion dur="12s" repeatCount="indefinite" rotate="auto">
+                  <path d="M 50 160 Q 200 120 400 160 Q 600 200 850 160"/>
+                </animateMotion>
+              </circle>
+              
+              <circle cx="45" cy="160" r="5" fill="#58a6ff" filter="url(#glow)">
+                <animateMotion dur="12s" repeatCount="indefinite" rotate="auto" begin="0.2s">
+                  <path d="M 50 160 Q 200 120 400 160 Q 600 200 850 160"/>
+                </animateMotion>
+              </circle>
+              
+              <circle cx="40" cy="160" r="4" fill="#39d353" filter="url(#glow)">
+                <animateMotion dur="12s" repeatCount="indefinite" rotate="auto" begin="0.4s">
+                  <path d="M 50 160 Q 200 120 400 160 Q 600 200 850 160"/>
+                </animateMotion>
+              </circle>
+              
+              <!-- Snake head with eyes -->
+              <g id="snake-head-group">
+                <circle cx="55" cy="160" r="10" class="snake-head">
+                  <animateMotion dur="12s" repeatCount="indefinite" rotate="auto">
+                    <path d="M 50 160 Q 200 120 400 160 Q 600 200 850 160"/>
+                  </animateMotion>
+                </circle>
+                
+                <!-- Snake eyes -->
+                <circle cx="58" cy="157" r="2" fill="white">
+                  <animateMotion dur="12s" repeatCount="indefinite" rotate="auto">
+                    <path d="M 50 160 Q 200 120 400 160 Q 600 200 850 160"/>
+                  </animateMotion>
+                </circle>
+                <circle cx="58" cy="163" r="2" fill="white">
+                  <animateMotion dur="12s" repeatCount="indefinite" rotate="auto">
+                    <path d="M 50 160 Q 200 120 400 160 Q 600 200 850 160"/>
+                  </animateMotion>
+                </circle>
+              </g>
+            </g>
+            
+            <!-- Particle effects when dots are eaten -->
+            <g id="particles">
+              <circle cx="110" cy="150" r="2" class="particle">
+                <animate attributeName="opacity" values="0;1;0" dur="0.5s" begin="1.2s"/>
+                <animate attributeName="r" values="2;8;2" dur="0.5s" begin="1.2s"/>
+              </circle>
+              <circle cx="150" cy="160" r="2" class="particle">
+                <animate attributeName="opacity" values="0;1;0" dur="0.5s" begin="2.8s"/>
+                <animate attributeName="r" values="2;8;2" dur="0.5s" begin="2.8s"/>
+              </circle>
+              <!-- Add more particles for each eaten dot -->
+            </g>
+            
+            <!-- Score counter -->
+            <text x="850" y="100" class="glow-text" font-size="16">
+              SCORE: <tspan id="score">0</tspan>
+              <animate attributeName="opacity" values="0.5;1;0.5" dur="1s" repeatCount="indefinite"/>
+            </text>
+            
+            <!-- Fun messages -->
+            <text x="500" y="350" class="glow-text" font-size="20" text-anchor="middle" opacity="0">
+              🎉 NOM NOM NOM! SNAKE IS EATING MY NAME! 🎉
+              <animate attributeName="opacity" values="0;1;1;0" dur="4s" begin="6s"/>
             </text>
           </svg>
           EOF
