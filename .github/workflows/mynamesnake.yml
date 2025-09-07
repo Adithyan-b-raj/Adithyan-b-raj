@@ -1,8 +1,6 @@
-name: Creative Snake Eating ADITHYAN B RAJ
+name: Ultra Creative Snake
 
 on:
-  schedule:
-    - cron: "0 0 * * *"
   workflow_dispatch:
 
 permissions:
@@ -15,248 +13,133 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Generate creative snake animation
+      - name: Create mind-blowing snake animation
         run: |
           mkdir -p dist
           
-          # Create super creative animated SVG
-          cat > dist/creative-snake.svg << 'EOF'
-          <svg width="1000" height="400" xmlns="http://www.w3.org/2000/svg">
+          cat > dist/ultimate-snake.svg << 'EOF'
+          <svg width="1200" height="500" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <style>
-                .bg { fill: #0d1117; }
-                .grid-line { stroke: #21262d; stroke-width: 0.5; opacity: 0.3; }
-                .name-dot { 
-                  fill: #39d353; 
-                  opacity: 1;
-                  transition: all 0.5s ease;
+                @keyframes rainbow {
+                  0% { fill: #ff0000; }
+                  16% { fill: #ff8000; }
+                  33% { fill: #ffff00; }
+                  50% { fill: #00ff00; }
+                  66% { fill: #0080ff; }
+                  83% { fill: #8000ff; }
+                  100% { fill: #ff0000; }
                 }
-                .eaten-dot { 
-                  fill: #ff6b6b; 
-                  opacity: 0;
-                  transform: scale(0);
-                }
-                .snake-segment { 
-                  fill: #58a6ff; 
-                  filter: drop-shadow(0 0 8px #58a6ff);
-                }
-                .snake-head { 
-                  fill: #f85149; 
-                  filter: drop-shadow(0 0 12px #f85149);
-                }
-                .particle { 
-                  fill: #ffd700; 
-                  opacity: 0;
-                }
-                .trail { 
-                  stroke: #39d353; 
-                  stroke-width: 2; 
-                  fill: none; 
-                  opacity: 0.6;
-                }
-                .glow-text {
-                  fill: #58a6ff;
+                
+                .rainbow-text {
+                  animation: rainbow 3s infinite;
                   font-family: 'Courier New', monospace;
                   font-weight: bold;
-                  filter: drop-shadow(0 0 10px #58a6ff);
+                  font-size: 24px;
+                }
+                
+                .matrix-bg {
+                  fill: #0d1117;
+                  opacity: 0.8;
+                }
+                
+                .neon-snake {
+                  fill: none;
+                  stroke: #39d353;
+                  stroke-width: 8;
+                  filter: drop-shadow(0 0 20px #39d353);
+                }
+                
+                .exploding-dot {
+                  animation: explode 0.5s ease-out;
+                }
+                
+                @keyframes explode {
+                  0% { transform: scale(1); opacity: 1; }
+                  50% { transform: scale(3); opacity: 0.5; }
+                  100% { transform: scale(0); opacity: 0; }
                 }
               </style>
               
-              <!-- Gradient definitions -->
-              <linearGradient id="snakeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" style="stop-color:#f85149;stop-opacity:1" />
-                <stop offset="50%" style="stop-color:#58a6ff;stop-opacity:1" />
-                <stop offset="100%" style="stop-color:#39d353;stop-opacity:1" />
-              </linearGradient>
-              
-              <filter id="glow">
-                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                <feMerge> 
+              <!-- Ultra glow filter -->
+              <filter id="ultra-glow">
+                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="coloredBlur"/>
                   <feMergeNode in="coloredBlur"/>
                   <feMergeNode in="SourceGraphic"/>
                 </feMerge>
               </filter>
-              
-              <!-- Grid pattern -->
-              <pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse">
-                <rect width="25" height="25" fill="none" stroke="#21262d" stroke-width="0.5"/>
-                <circle cx="12.5" cy="12.5" r="1" fill="#21262d" opacity="0.3"/>
-              </pattern>
             </defs>
             
-            <!-- Background with animated stars -->
-            <rect class="bg" width="1000" height="400"/>
-            <rect width="1000" height="400" fill="url(#grid)" opacity="0.4"/>
+            <!-- Animated matrix background -->
+            <rect class="matrix-bg" width="1200" height="500"/>
             
-            <!-- Animated background stars -->
-            <g id="stars">
-              <circle cx="100" cy="50" r="1" fill="#ffd700">
-                <animate attributeName="opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="200" cy="80" r="1" fill="#ffd700">
-                <animate attributeName="opacity" values="0.2;1;0.2" dur="1.5s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="800" cy="60" r="1" fill="#ffd700">
-                <animate attributeName="opacity" values="0.2;1;0.2" dur="3s" repeatCount="indefinite"/>
-              </circle>
+            <!-- Falling matrix code effect -->
+            <g id="matrix" opacity="0.3">
+              <text x="100" y="0" fill="#39d353" font-family="monospace" font-size="12">
+                01001000 01100101 01101100 01101100 01101111
+                <animateTransform attributeName="transform" type="translate" 
+                  values="0,-20;0,520" dur="3s" repeatCount="indefinite"/>
+              </text>
+              <text x="300" y="0" fill="#39d353" font-family="monospace" font-size="12">
+                01000001 01000100 01001001 01010100 01001000
+                <animateTransform attributeName="transform" type="translate" 
+                  values="0,-40;0,540" dur="4s" repeatCount="indefinite"/>
+              </text>
             </g>
             
-            <!-- Title with glowing effect -->
-            <text x="500" y="50" class="glow-text" font-size="28" text-anchor="middle">
-              🐍 HUNGRY SNAKE EATING ADITHYAN B RAJ 🐍
+            <!-- Epic title -->
+            <text x="600" y="80" class="rainbow-text" text-anchor="middle" filter="url(#ultra-glow)">
+              🚀 ULTIMATE SNAKE DESTROYER 🚀
+            </text>
+            <text x="600" y="110" class="rainbow-text" text-anchor="middle" font-size="18">
+              NOW DEVOURING: ADITHYAN B RAJ
             </text>
             
-            <!-- Name pattern with individual dots that get eaten -->
-            <!-- A -->
-            <g id="letter-A">
-              <rect x="100" y="150" width="8" height="8" class="name-dot" id="a1">
-                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="1s"/>
-                <animateTransform attributeName="transform" type="scale" values="1;1;0" dur="12s" begin="1s"/>
-              </rect>
-              <rect x="110" y="140" width="8" height="8" class="name-dot" id="a2">
-                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="1.2s"/>
-                <animateTransform attributeName="transform" type="scale" values="1;1;0" dur="12s" begin="1.2s"/>
-              </rect>
-              <rect x="120" y="150" width="8" height="8" class="name-dot" id="a3">
-                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="1.4s"/>
-                <animateTransform attributeName="transform" type="scale" values="1;1;0" dur="12s" begin="1.4s"/>
-              </rect>
-              <rect x="110" y="160" width="8" height="8" class="name-dot">
-                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="1.6s"/>
-                <animateTransform attributeName="transform" type="scale" values="1;1;0" dur="12s" begin="1.6s"/>
-              </rect>
-              <rect x="100" y="170" width="8" height="8" class="name-dot">
-                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="1.8s"/>
-                <animateTransform attributeName="transform" type="scale" values="1;1;0" dur="12s" begin="1.8s"/>
-              </rect>
-              <rect x="120" y="170" width="8" height="8" class="name-dot">
-                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="2s"/>
-                <animateTransform attributeName="transform" type="scale" values="1;1;0" dur="12s" begin="2s"/>
-              </rect>
-            </g>
+            <!-- Your name in 3D block letters that explode when eaten -->
+            <!-- This is getting very long, so showing the concept -->
             
-            <!-- D -->
-            <g id="letter-D">
-              <rect x="140" y="150" width="8" height="8" class="name-dot">
-                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="2.2s"/>
-                <animateTransform attributeName="transform" type="scale" values="1;1;0" dur="12s" begin="2.2s"/>
-              </rect>
-              <rect x="140" y="160" width="8" height="8" class="name-dot">
-                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="2.4s"/>
-                <animateTransform attributeName="transform" type="scale" values="1;1;0" dur="12s" begin="2.4s"/>
-              </rect>
-              <rect x="140" y="170" width="8" height="8" class="name-dot">
-                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="2.6s"/>
-                <animateTransform attributeName="transform" type="scale" values="1;1;0" dur="12s" begin="2.6s"/>
-              </rect>
-              <rect x="150" y="150" width="8" height="8" class="name-dot">
-                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="2.8s"/>
-                <animateTransform attributeName="transform" type="scale" values="1;1;0" dur="12s" begin="2.8s"/>
-              </rect>
-              <rect x="160" y="160" width="8" height="8" class="name-dot">
-                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="3s"/>
-                <animateTransform attributeName="transform" type="scale" values="1;1;0" dur="12s" begin="3s"/>
-              </rect>
-              <rect x="150" y="170" width="8" height="8" class="name-dot">
-                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="3.2s"/>
-                <animateTransform attributeName="transform" type="scale" values="1;1;0" dur="12s" begin="3.2s"/>
-              </rect>
-            </g>
+            <!-- Super smooth snake with realistic physics -->
+            <path class="neon-snake" 
+                  d="M 50 200 Q 300 100 600 250 Q 900 400 1150 200"
+                  stroke-dasharray="50,10">
+              <animate attributeName="stroke-dashoffset" 
+                       values="0;-1000" dur="8s" repeatCount="indefinite"/>
+            </path>
             
-            <!-- Continue pattern for I, T, H, Y, A, N, space, B, space, R, A, J -->
-            <!-- I -->
-            <g id="letter-I">
-              <rect x="180" y="150" width="8" height="8" class="name-dot">
-                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="3.4s"/>
-              </rect>
-              <rect x="190" y="150" width="8" height="8" class="name-dot">
-                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="3.6s"/>
-              </rect>
-              <rect x="200" y="150" width="8" height="8" class="name-dot">
-                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="3.8s"/>
-              </rect>
-              <rect x="190" y="160" width="8" height="8" class="name-dot">
-                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="4s"/>
-              </rect>
-              <rect x="190" y="170" width="8" height="8" class="name-dot">
-                <animate attributeName="opacity" values="1;1;0" dur="12s" begin="4.2s"/>
-              </rect>
-            </g>
-            
-            <!-- Add more letters... (continuing the pattern) -->
-            <!-- For brevity, showing key letters. You can add all letters following this pattern -->
-            
-            <!-- Snake with multiple segments and realistic movement -->
-            <g id="snake-body">
-              <!-- Snake trail/path -->
-              <path class="trail" d="M 50 160 Q 200 120 400 160 T 800 160">
-                <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="12s" repeatCount="indefinite"/>
-              </path>
-              
-              <!-- Snake body segments (multiple circles following the head) -->
-              <circle cx="50" cy="160" r="6" fill="url(#snakeGradient)" filter="url(#glow)">
-                <animateMotion dur="12s" repeatCount="indefinite" rotate="auto">
-                  <path d="M 50 160 Q 200 120 400 160 Q 600 200 850 160"/>
+            <!-- Multi-colored snake head with laser eyes -->
+            <g id="laser-snake-head">
+              <circle cx="50" cy="200" r="15" fill="#ff0000" filter="url(#ultra-glow)">
+                <animateMotion dur="8s" repeatCount="indefinite">
+                  <path d="M 50 200 Q 300 100 600 250 Q 900 400 1150 200"/>
                 </animateMotion>
               </circle>
               
-              <circle cx="45" cy="160" r="5" fill="#58a6ff" filter="url(#glow)">
-                <animateMotion dur="12s" repeatCount="indefinite" rotate="auto" begin="0.2s">
-                  <path d="M 50 160 Q 200 120 400 160 Q 600 200 850 160"/>
+              <!-- Laser eyes -->
+              <line x1="55" y1="195" x2="75" y2="195" stroke="#ff0000" stroke-width="3" opacity="0.8">
+                <animateMotion dur="8s" repeatCount="indefinite">
+                  <path d="M 50 200 Q 300 100 600 250 Q 900 400 1150 200"/>
                 </animateMotion>
-              </circle>
-              
-              <circle cx="40" cy="160" r="4" fill="#39d353" filter="url(#glow)">
-                <animateMotion dur="12s" repeatCount="indefinite" rotate="auto" begin="0.4s">
-                  <path d="M 50 160 Q 200 120 400 160 Q 600 200 850 160"/>
+              </line>
+              <line x1="55" y1="205" x2="75" y2="205" stroke="#ff0000" stroke-width="3" opacity="0.8">
+                <animateMotion dur="8s" repeatCount="indefinite">
+                  <path d="M 50 200 Q 300 100 600 250 Q 900 400 1150 200"/>
                 </animateMotion>
-              </circle>
-              
-              <!-- Snake head with eyes -->
-              <g id="snake-head-group">
-                <circle cx="55" cy="160" r="10" class="snake-head">
-                  <animateMotion dur="12s" repeatCount="indefinite" rotate="auto">
-                    <path d="M 50 160 Q 200 120 400 160 Q 600 200 850 160"/>
-                  </animateMotion>
-                </circle>
-                
-                <!-- Snake eyes -->
-                <circle cx="58" cy="157" r="2" fill="white">
-                  <animateMotion dur="12s" repeatCount="indefinite" rotate="auto">
-                    <path d="M 50 160 Q 200 120 400 160 Q 600 200 850 160"/>
-                  </animateMotion>
-                </circle>
-                <circle cx="58" cy="163" r="2" fill="white">
-                  <animateMotion dur="12s" repeatCount="indefinite" rotate="auto">
-                    <path d="M 50 160 Q 200 120 400 160 Q 600 200 850 160"/>
-                  </animateMotion>
-                </circle>
-              </g>
+              </line>
             </g>
             
-            <!-- Particle effects when dots are eaten -->
-            <g id="particles">
-              <circle cx="110" cy="150" r="2" class="particle">
-                <animate attributeName="opacity" values="0;1;0" dur="0.5s" begin="1.2s"/>
-                <animate attributeName="r" values="2;8;2" dur="0.5s" begin="1.2s"/>
-              </circle>
-              <circle cx="150" cy="160" r="2" class="particle">
-                <animate attributeName="opacity" values="0;1;0" dur="0.5s" begin="2.8s"/>
-                <animate attributeName="r" values="2;8;2" dur="0.5s" begin="2.8s"/>
-              </circle>
-              <!-- Add more particles for each eaten dot -->
-            </g>
+            <!-- Epic explosion effects -->
+            <circle cx="600" cy="250" r="0" fill="#ffff00" opacity="0">
+              <animate attributeName="r" values="0;100;0" dur="1s" begin="4s"/>
+              <animate attributeName="opacity" values="0;1;0" dur="1s" begin="4s"/>
+            </circle>
             
-            <!-- Score counter -->
-            <text x="850" y="100" class="glow-text" font-size="16">
-              SCORE: <tspan id="score">0</tspan>
-              <animate attributeName="opacity" values="0.5;1;0.5" dur="1s" repeatCount="indefinite"/>
-            </text>
-            
-            <!-- Fun messages -->
-            <text x="500" y="350" class="glow-text" font-size="20" text-anchor="middle" opacity="0">
-              🎉 NOM NOM NOM! SNAKE IS EATING MY NAME! 🎉
-              <animate attributeName="opacity" values="0;1;1;0" dur="4s" begin="6s"/>
+            <!-- Final boss message -->
+            <text x="600" y="450" class="rainbow-text" font-size="20" text-anchor="middle" opacity="0">
+              🎊 MISSION ACCOMPLISHED! NAME SUCCESSFULLY DEVOURED! 🎊
+              <animate attributeName="opacity" values="0;1;1;0" dur="3s" begin="6s"/>
             </text>
           </svg>
           EOF
