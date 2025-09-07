@@ -1,5 +1,5 @@
 <div align="center">
-[![Spotify](http://127.0.0.1:5000?uid=31qf4aaodpi4nb6iluyfdvozsmyu)](https://open.spotify.com/user/31qf4aaodpi4nb6iluyfdvozsmyu)
+[![Spotify](http://127.0.0.1:5000?uid=31qf4aaodpi4nb6iluyfdvozsmyu&theme=modern)](https://open.spotify.com/user/31qf4aaodpi4nb6iluyfdvozsmyu)
 
 # 🌟 Welcome to Adithyanbraj's Universe 🌟
 
