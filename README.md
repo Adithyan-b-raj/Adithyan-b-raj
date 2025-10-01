@@ -17,6 +17,7 @@
 
 ## 🎨 **The Digital Craftsman** 🎨
 
+<img align="right" src="https://media1.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" />
 *"Code is like humor. When you have to explain it, it's bad." – Cory House*
 
 </div>
