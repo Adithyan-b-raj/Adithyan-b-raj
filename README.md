@@ -3,11 +3,11 @@
 ## About Me
 
 ## 🌟 Well I'm Adithyan B Raj🌟
-<a href="#"><img align="right" src="https://github.com/blackcater/blackcater/raw/main/images/banner.gif" width="200 " height="200" /></a>
+
 <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=32&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+there!+I'm+Adithyanbraj+👋;Full+Stack+Developer+💻;AI+%26+ML+Enthusiast+🤖;Always+Learning+Something+New+🚀" alt="Typing SVG" />
 
 </div>
-
+<a href="#"><img align="right" src="https://github.com/blackcater/blackcater/raw/main/images/banner.gif" width="200 " height="200" /></a>
 ---
 
 <div align="center">
