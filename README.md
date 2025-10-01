@@ -3,7 +3,7 @@
 ## About Me
 <img align="right" src="https://media1.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" />
 
-## 🌟 Well I'm Adithyan B Raj🌟
+## Well I'm Adithyan B Raj
 
 <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=32&duration=2800&pause=2000&color=A9FEF7&center=true&vCenter=true&width=940&lines=Hey+there!+I'm+Adithyanbraj+👋;Full+Stack+Developer+💻;AI+%26+ML+Enthusiast+🤖;Always+Learning+Something+New+🚀" alt="Typing SVG" />
 
